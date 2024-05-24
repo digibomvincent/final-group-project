@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    </header>
+    <div class="iframe_blank"></div>
+    <main id="styling">
+        <section class="category">
+            <h2>所有風格 / 女裝 / 夏天 </h2>
+            <ul class="styling_nav">
+                <li>篩選</li>
+                <li onclick="openUpload()">上傳領回饋!</li>
+            </ul>
+            <div>
+                <ul class="page">
+                    <h3>168</h3>
+                    <h3>ITEMS</h3>
+                    <li><a href="#">&lt;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- <img src="./images/styling/m1.svg" alt=""> -->
+    </main>
+    <div id="root"></div>
+    <!-- react -->
+    <script type="text/babel">
+        const styling = ['1', '2', '3', '4', '5', '6']
+        console.log(styling)
+        const App = () => {
+            return (
+                <>
+                    <div className='styling_mask' onClick={closeUpload}></div>
+                    <section className='sale_content'>
+                        {styling.map((p) => {
+                            return (
+                                <article className="product styling" key={p.styling}>
+                                    <a className="cloth" href="onestyle.html" target="_top">
+                                        <img src="./images/styling/style2.jpg" alt="" />
+                                    </a>
+                                    <div className="styling_info">
+                                        <figure className="styling_head">
+                                            <img src="./images/styling/f1.jpg" alt="" />
+                                        </figure>
+                                        <div >
+                                            <div className="styling_user">
+                                                <h2>Pinky</h2>
+                                                <h2>165 <span>cm</span></h2>
+                                            </div>
+                                            <h2>尺寸: <span>S</span> </h2>
+                                        </div>
+                                    </div>
+                                </article>
+                            )
+                        })}
+                    </section>
+                    <section id='upload'>
+                        <h1>穿搭分享領回饋</h1>
+                        <div className='upload_content'>
+                            <div className='upload_pic'>
+                                <img src="./images/icon/camera.svg" alt="" />
+                                上傳照片
+                            </div>
+
+                            <div>
+                                <h2>單品分類</h2>
+                                <h2>歷史訂單</h2>
+                                <h2>身高(cm)</h2>
+                            </div>
+
+                            <div>
+                                <div>站內分類搜尋 <span>&gt;</span> </div>
+                                <div>歷史訂單搜尋 <span>&gt;</span></div>
+                                <input type="number" placeholder="cm" />
+                            </div>
+
+                        </div>
+                    </section>
+                </>
+            )
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+    <!-- react -->
+    <section class="category">
+        <div>
+            <ul class="page">
+                <h3>168</h3>
+                <h3>ITEMS</h3>
+                <li><a href="#">&lt;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <iframe class="footer" src="./footer.html" frameborder="0"></iframe>
+    </footer>
+    <script>
+        function openUpload() {
+            document.querySelector('.styling_mask').style.display = 'block';
+            document.getElementById('upload').style.display = 'block';
+        }
+
+        function closeUpload() {
+            document.querySelector('.styling_mask').style.display = 'none';
+            document.getElementById("upload").style.display = "none";
+        }
+
+    </script>
+
+</body>
+
+</html>

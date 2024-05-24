@@ -1,0 +1,512 @@
+@charset "UTF-8";
+
+/* 以下 eric reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 以上 eric reset */
+/* 變數區 */
+:root {
+    /* ctrl+H +> var(--xxxx)取代*/
+    --bg: #F9FAF5;
+    --green: #3A684E;
+    --yellow: #FFDD50;
+    --b60: #666666;
+    --b20: #CDCDCD;
+    --b5: #EDEDED;
+    --b80: #343434;
+}
+
+/* 共用區 */
+* {
+    box-sizing: border-box;
+    /* 不累加border & padding */
+}
+
+body {
+    font-family:
+        /* 英文有-或單詞不用引號 要給也可以 */
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    color: var(--b80);
+    /* 全網字體預設 */
+    background-color: var(--bg);
+    min-width: 1000px;
+
+}
+
+img {
+    display: block;
+    width: 100%;
+    /* svg預設100% */
+}
+
+a {
+    display: block;
+    color: var(--bg-color-3);
+    text-decoration: none;
+    /* 取消預設底線 */
+}
+
+/* top */
+.topbar {
+    position: fixed;
+    /* 加了就不會自動延展 */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* 主軸水平 */
+    align-items: center;
+    /* 副軸垂直對齊 */
+    padding: 25px;
+    border-bottom: 1px solid #3A684E;
+}
+
+.text_small {
+    display: flex;
+}
+
+.text_small a {
+    margin-right: 10px;
+}
+
+.topbar nav ul {
+    display: flex;
+}
+
+.text_small ul {
+    display: flex;
+}
+
+.menu li {
+    margin: 0 20px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: var(--green);
+}
+
+.topbar nav li {
+    margin: 0 10px;
+}
+
+.nav {
+    width: 100%;
+    height: 11.8vh;
+    /* iframe有預設高*/
+}
+
+.logo {
+    position: absolute;
+    width: 200px;
+    top: 78%;
+    left: 43%;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.banner1 {
+    height: 548px;
+    object-fit: cover;
+}
+
+/* 內容 */
+.title_y {
+    font-size: 3rem;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    color: var(--yellow);
+    -webkit-text-stroke: 1.5px var(--green);
+    text-shadow: var(--green) -2px 2px;
+
+}
+
+section {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* footer */
+.footer {
+    width: 100%;
+    height: 295px;
+}
+
+.footer_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--green);
+    padding-bottom: 30px;
+}
+
+
+.footer_buttom {
+    background-color: #1A1A1A;
+    padding: 33px;
+    width: 100%;
+}
+
+.contact {
+    display: flex;
+}
+
+.contact>* {
+    margin: 0 25px;
+}
+
+.contact small {
+    color: var(--b5);
+    font-size: 1rem;
+    line-height: 150%;
+}
+
+.text_y {
+    width: 280px;
+    margin: 30px 0;
+}
+
+.nav_buttom {
+    display: flex;
+    justify-content: center;
+}
+
+.nav_buttom>* {
+    padding: 0 30px;
+    color: var(--b5);
+}
+
+.nav_buttom li {
+    border-right: var(--b5) 1px solid;
+}
+
+/* 註冊區 */
+#account {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #E0E1DC;
+    color: #E0E1DC;
+    font-size: 20pt;
+    padding-left: .4rem;
+    padding-top: .3rem;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 密碼眼睛 */
+#passwordField {
+    background-color: transparent;
+    border: none;
+    font-size: 20pt;
+    /* height: 33.15px; */
+    width: 98%;
+    margin: .2rem auto;
+    padding-left: .4rem;
+    padding-top: .3rem;
+    color: var(--b80);
+    border-bottom: 1px solid #E0E1DC;
+}
+
+#eye {
+    float: right;
+    margin-right: .6rem;
+    margin-top: -1.7rem;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+select {
+    width: 130px;
+    height: 25px;
+    margin-right: 18px;
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    border: transparent;
+    border-bottom: 1px solid #E0E1DC;
+}
+
+.register {
+    color: var(--green);
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+#order_1 {
+    color: var(--b80);
+}
+
+#order_2 {
+    color: var(--b80);
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+input::placeholder {
+    font-size: 1.25rem;
+}
+
+.box input {
+    font-size: 1.25rem;
+}
+
+.box h2 {
+    margin: 5px 0;
+    font-size: 1.5rem;
+}
+
+.box ul li {
+    margin: 10px 0;
+    font-size: 1.25rem;
+    padding-bottom: 1.1rem;
+}
+
+.box ul a {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+.box ul p {
+    font-size: 1rem;
+}
+.box ul li label {
+    font-size: 1rem;
+}
+
+#order_2 div {
+    display: inline-block;
+}
+
+.button_element_next {
+    background-color: var(--green);
+    color: var(--bg);
+    width: 437px;
+    height: 44px;
+    font-size: 20pt;
+    text-align: center;
+    line-height: 44px;
+    align-self: center;
+}
+
+.button_element_login a {
+    background-color: var(--bg);
+    color: var(--b80);
+    border: solid var(--b60) 1px;
+    width: 437px;
+    height: 44px;
+    font-size: 20pt;
+    text-align: center;
+    line-height: 44px;
+}
+
+.button_element_back {
+    align-self: center;
+    text-align: center;
+    padding-right: 2rem;
+    padding-top: 3.2rem;
+}
+
+#password {
+    color: transparent;
+    /* 或 */
+    font-size: 0;
+}
+
+/* 會員登入區 */
+#account {
+    background-color: #F9FAF5;
+    border: none;
+    border-bottom: 1px solid #E0E1DC;
+    color: var(--b80);
+    font-size: 20pt;
+    width: 437px;
+}
+
+#password {
+    background-color: #F9FAF5;
+    border: none;
+    padding-left: 7px;
+    border-bottom: 1px solid #E0E1DC;
+    color: var(--b80);
+    font-size: 20pt;
+    width: 437px;
+}
+
+.register {
+    color: var(--green);
+    font-size: 24pt;
+}
+
+.forget {
+    color: #0066FF;
+    font-size: 16px;
+}
+
+label a {
+    white-space: nowrap !important;
+}
+
+
+.sns {
+    display: flex;
+    margin-left: 6rem;
+    color: var(--green);
+}
+
+.sns img {
+    padding-right: 50px;
+}
+
+#react-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

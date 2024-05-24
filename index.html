@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>PEKABOO</title>
+    <link rel="icon" href="/logo.ico">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.jcarousellite.min.js"></script>
+    <script>
+        $(function () {
+            $('#carousel').jCarouselLite({
+                auto: 3000, //停多久
+                speed: 2000, //移動速度
+                visible: 1,  //顯示幾張
+                scroll: 1    //每次捲動張數
+            });
+        });
+    </script>
+    <script src="./js/script.js"></script>
+</head>
+
+<body onload="loadNav()">
+
+    <header>
+        <div class="index_top " id="index_top">
+            <img src="./images/logo.png" alt="">
+            <img src="./images/text_g.png" alt="pekaboo logo">
+        </div>
+        <div class="blank"></div>
+    </header>
+    <iframe class="nav" id="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    <div class="banner">
+        <div id="carousel">
+            <ul>
+                <li><img src="./images/banner/banner1.webp" alt="" /></li>
+                <li><img src="./images/banner/banner2.webp" alt="" /></li>
+                <li><img src="./images/banner/banner3.webp" alt="" /></li>
+                <li><img src="./images/banner/banner4.webp" alt="" /></li>
+            </ul>
+        </div>
+        <figure class="logo"><img src="./images/logo.png" alt="" /></figure>
+        <figure class="logo_dizzy"><img src="./images/face/face2.png" alt="" /></figure>
+    </div>
+    <div id="root"></div>
+    <!-- react -->
+    <script type="text/babel">
+        const { useState } = React
+        const products = [
+
+            {
+                name: "日系可愛配色胸口刺繡舒適透氣上衣（100%棉）",
+                id: 1,
+                top_down: "上著",
+                tag: "短袖",
+                sex: "女",
+                price: 1080
+            },
+            {
+                name: "多功能4WAY裏外兩穿自由自在中鋪棉防寒外套（袖子可拆）",
+                id: 2,
+                top_down: "上著",
+                tag: "外套",
+                sex: "女",
+                price: 1880
+            },
+            {
+                name: "綺麗上品質感光滑華奢摺線上衣",
+                id: 3,
+                top_down: "上著",
+                tag: "短袖",
+                sex: "女",
+                price: 1080
+            },
+            {
+                name: "上品質感可愛美腿親膚剪綵蛋糕裙",
+                id: 4,
+                top_down: "下著",
+                tag: "長裙",
+                sex: "女",
+                price: 1980
+            },
+            {
+                name: "華奢美感小花餅多穿法透膚上衣",
+                id: 5,
+                top_down: "上著",
+                tag: "長袖",
+                sex: "女",
+                price: 1080
+            },
+            {
+                name: "復古立體波紋連帽鋪棉保暖外套（男女可穿）",
+                id: 6,
+                top_down: "上著",
+                tag: "外套",
+                sex: "男",
+                price: 1680
+            },
+            {
+                name: "復古韓系印刷舒適寬鬆上衣（男女可穿）",
+                id: 7,
+                top_down: "上著",
+                tag: "短袖",
+                sex: "男",
+                price: 1380
+            },
+            {
+                name: "荷花漣漪可愛心機顯腿長短褲裙",
+                id: 8,
+                top_down: "下著",
+                tag: "短裙",
+                sex: "女",
+                price: 1180
+            },
+            {
+                name: "酷甜可調節線條造型舒適寬褲（男女可穿）",
+                id: 9,
+                top_down: "下著",
+                tag: "長褲",
+                sex: "男",
+                price: 1780
+            },
+            {
+                name: "機能魅力工裝可縮口寬褲（男女可穿）",
+                id: 10,
+                top_down: "下著",
+                tag: "長褲",
+                sex: "男",
+                price: 1080
+            },
+            {
+                name: "日系搖曳質感美腿伸縮舒適落地寬褲",
+                id: 11,
+                top_down: "下著",
+                tag: "長褲",
+                sex: "女",
+                price: 980
+            },
+            {
+                name: "主役級可愛2WAY點點紡紗百褶長裙",
+                id: 12,
+                top_down: "下著",
+                tag: "長裙",
+                sex: "女",
+                price: 1780
+            },
+            {
+                name: "日系配色落肩街頭造型短袖上衣（男女可穿｜100%棉）",
+                id: 13,
+                top_down: "上著",
+                tag: "短袖",
+                sex: "男",
+                price: 1480
+            }
+        ]
+        const Card = (props) => {
+            const { name, id, tag, price } = props
+
+            return (
+                <article className="product" >
+                    <a className="cloth" href="cloth.html" target="_top">
+                        <img src={`./images/cloth/cl${id}.webp`} alt="" />
+                        <img src={`./images/cloth/cl${id}-1.webp`} alt="" />
+                        <h2>{name}</h2>
+                    </a>
+                    <h2 className="tag">{tag}</h2>
+                    <div className="price">
+                        <h2>NT.</h2>
+                        <h3>{price}</h3>
+                    </div>
+                    <button className="addcart"><img src="./images/icon/addcart.png" alt="" /></button>
+                </article>
+            )
+        }
+        const App = () => {
+            /*     const [showCart, setShowCart] = useState(false);
+                const toggleCart = () => {
+                    setShowCart(!showCart);改為相反值 
+                };
+                 Make toggleCart accessible globally
+                window.toggleCart = toggleCart; */
+            return (
+                <>
+                    <main id="index">
+                        {/*寫到nav裡面了 
+                         {showCart && (
+                            如果 && 前面的表達式為 true，則渲染後面的內容 
+                            <div className='cart_content'>
+                                <h2>共有商品(1)</h2>
+                                <hr />
+                                <div className='box'>
+                                    <img src={`./images/cloth/cl1.webp`} alt="" />
+                                    <div>
+                                        <h2>日系可愛配色胸口刺繡舒適透氣上衣</h2>
+                                        <h2>數量:1</h2>
+                                        <h2>NT.1080</h2>
+                                    </div>
+                                </div>
+                                <div className='cart_view'><a href="">前往購物車</a></div>
+                            </div>
+                        )} */}
+                        <section className="sale">
+                            <h1 className="title_y">SALE <br />―</h1>
+                        </section>
+                        <section className='sale_content'>
+                            {
+                                products.slice(0, 8).map((p) => {
+                                    return <Card name={p.name} id={p.id} tag={p.tag} price={p.price} key={p.id}></Card>
+                                })
+                            }
+                        </section>
+                        <section className="sale">
+                            <button className="view"><a href="">VIEW MORE</a></button>
+                        </section>
+                        <section className="sale">
+                            <h1 className="title_y">TOP <br />―</h1>
+                        </section>
+                        <section className='sale_content'>
+                            {
+                                products.slice(8, 13).map((p) => {
+                                    return <Card name={p.name} id={p.id} tag={p.tag} price={p.price} key={p.id}></Card>
+                                })
+                            }
+                        </section>
+                        <section className="sale">
+                            <button className="view"><a href="">VIEW MORE</a></button>
+                        </section>
+                    </main>
+                </>
+            )
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(
+            <App />);
+    </script>
+    <!-- react -->
+
+
+    <footer>
+        <iframe class="footer" src="./footer.html" frameborder="0"></iframe>
+    </footer>
+    <!-- nav_l -->
+    <script>
+        // window.onload = function () {  /* 問老師 */
+        //     var iframe = document.getElementById('nav');
+        //     var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+        //     var small_expand = iframeDocument.getElementById('small_expand');
+        //     small_expand.classList.add('shrink');
+        // }
+        function loadNav() {
+            var iframe = document.getElementById('nav');
+            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            var small_expand = iframeDocument.getElementById('small_expand');
+            small_expand.classList.add('shrink');
+        };
+
+        window.addEventListener('scroll', function () {
+            var index_top = document.getElementById('index_top');
+            var iframe = document.getElementById('nav');
+            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            var small_expand = iframeDocument.getElementById('small_expand');
+            var scrollHeight = window.scrollY; // 獲取滾動的高度
+            if (scrollHeight > 250) {
+                index_top.style.height = '0px'; // 當滾動超過 280 時，將高度設置為 0
+                small_expand.style.width = '296px';
+                iframe.style.top = 0 + 'px';
+                iframe.style.position = 'fixed';
+            } else {
+                index_top.style.height = 250 - scrollHeight + 'px'; // 當滾動小於等於 280 時，根據邏輯設置高度
+                small_expand.style.width = scrollHeight + 'px';
+                iframe.style.top = 250 + 'px';
+                iframe.style.position = 'absolute';
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const logo = document.querySelector('.logo');
+            const logo_dizzy = document.querySelector('.logo_dizzy');
+            let scrollTimeout;
+            function changeLogo() {
+                if (window.scrollY > 100) {
+                    logo.style.display = "none";
+                    logo_dizzy.style.display = "block";
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        logo.style.display = "block";
+                        logo_dizzy.style.display = "none";
+                    }, 1000);
+                } else {
+                    logo.style.display = "block";
+                    logo_dizzy.style.display = "none";
+                }
+            }
+            window.addEventListener('scroll', changeLogo);
+        });
+
+    </script>
+</body>
+
+</html>

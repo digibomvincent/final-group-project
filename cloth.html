@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/photochange.js"></script>
+</head>
+
+<body>
+    <header>
+        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    </header>
+    <div class="iframe_blank"></div>
+    <main id="one_cloth">
+        <section class="one_cloth">
+            <h2>所有商品 / 女裝 / 上著 / 短袖T恤</h2>
+            <div class="cloth_box">
+                <form class="pic_s">
+                    <input type="radio" name="image" id="img1" value="./images/cloth/cl1.webp" checked>
+                    <label for="img1"><img src="./images/cloth/cl1.webp" alt=""></label>
+                    <input type="radio" name="image" id="img2" value="./images/cloth/cl1-2.webp">
+                    <label for="img2"><img src="./images/cloth/cl1-2.webp" alt=""></label>
+                    <input type="radio" name="image" id="img3" value="./images/cloth/cl1-3.webp">
+                    <label for="img3"><img src="./images/cloth/cl1-3.webp" alt=""></label>
+                    <input type="radio" name="image" id="img4" value="./images/cloth/cl1-4.webp">
+                    <label for="img4"><img src="./images/cloth/cl1-4.webp" alt=""></label>
+                </form>
+                <figure class="pic_l"><img id="largeImage" src="./images/cloth/cl1.webp" alt=""></figure>
+                <div>
+                    <h1>日系可愛配色胸口刺繡舒適透氣上衣（100%棉）</h1>
+                    <h2>NT.990</h2>
+                    <div class="color_bar">
+                        <div class="border_box">
+                            <input type="radio" value="None" id="blue" name="color" checked>
+                            <label class="blue" for="blue"></label>
+                        </div>
+                        <div class="border_box">
+                            <input type="radio" value="None" id="black" name="color">
+                            <label class="black" for="black"></label>
+                        </div>
+                        <div class="border_box">
+                            <input type="radio" value="None" id="white" name="color">
+                            <label class="white" for="white"></label>
+                        </div>
+                    </div>
+                    <div class="size_bar">
+                        <div class="border_box">
+                            <input type="radio" value="None" id="s" name="size" checked>
+                            <label class="s" for="s">S</label>
+                        </div>
+                        <div class="border_box">
+                            <input type="radio" value="None" id="m" name="size">
+                            <label class="m" for="m">M</label>
+                        </div>
+                        <div class="border_box">
+                            <input type="radio" value="None" id="l" name="size">
+                            <label class="l" for="l">L</label>
+                        </div>
+                    </div>
+                    <div class="count_bar">
+                        <button id="minus" class="btn">-</button>
+                        <span>1</span>
+                        <button id="plus" class="btn">+</button>
+                    </div>
+                    <div class="addcart_bar">
+                        <button class="btn">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cloth_detail">
+            <div class="logo_track">
+                <img class="logo_roll" src="./images/logo.png" alt="">
+            </div>
+            <div class="tabs">
+                <button class="tab active" onclick="openTab('tab1')">商品資訊</button>
+                <button class="tab" onclick="openTab('tab2')">尺寸表</button>
+            </div>
+
+            <div id="tab1" class="content active">
+                <p>顏色Color | <br>
+                    Chocolate / Black <br>
+                     <br>
+                    商品描述 DESCRIPTION |  <br>
+                    合身版型 / 喇叭袖設計 <br>
+                     <br>
+                    實穿分享 SHARING |  <br>
+                    #RETEM03週年系列 <br>
+                    版型設定長版合身 <br>
+                    選用親膚針織面料 <br>
+                     <br>
+                    袖口設定微開扇喇叭袖 <br>
+                    能讓手部線條看起來更加纖細 <br>
+                    前身釦子配置到近腰頭處 <br>
+                    創造出上身短、下身長的視覺效果 <br>
+                    同時修飾腰臀比例 <br>
+                    整體達到極佳的修身效果！ <br>
+                    特別推薦搭配V-Neck Knitted Vest 疊搭出豐富層次感 <br>
+                     <br>
+                     <br>
+                     <br>
+                    材質 MATERIAL | <br>
+                    50% Viscose <br>
+                    30% Polyester <br>
+                    20% Nylon <br>
+                     <br>
+                    -由於品類與製程特殊，因此尺寸數據會有±3cm的範圍 <br>
+                    -針織商品長時間吊掛可能造成變形，請摺疊平放收納 <br>
+                    -請參照洗標建議方式清洗，於陰涼處平鋪晾乾 <br>
+                    -如需整燙，請以攝氏 110 度以下低溫，隔布熨燙 <br>
+                     <br>
+                    預計5個工作天內寄出，延遲將另行通知 <br>
+                    下單前請務必確認尺寸數據 <br>
+                    Queen 身高 160cm / 46kg 著用S</p>
+            </div>
+
+            <div id="tab2" class="content">
+                <p>S M L</p>
+            </div>
+        </section>
+        <!-- tab script-->
+        <script>
+            function openTab(tabId) {
+                // 隱藏所有內容
+                var contents = document.querySelectorAll('.content');
+                contents.forEach(function (content) {
+                    content.classList.remove('active');
+                });
+    
+                // 隱藏所有標籤
+                var tabs = document.querySelectorAll('.tab');
+                tabs.forEach(function (tab) {
+                    tab.classList.remove('active');
+                });
+    
+                // 顯示指定內容
+                var tabContent = document.getElementById(tabId);
+                tabContent.classList.add('active');
+    
+                // 標記對應的顯示狀態
+                var activeTab = document.querySelector('[onclick="openTab(\'' + tabId + '\')"]');
+                activeTab.classList.add('active');
+
+                if(tabId==='tab2'){
+                    document.querySelector('.logo_roll').style.transform = 'translateX(232.5px) rotate(360deg)';
+                }else{
+                    document.querySelector('.logo_roll').style.transform = 'translateX(-232.5px) rotate(-360deg)';
+                }
+            }
+        </script>
+        <!-- tab script end-->
+    </main>
+    <footer>
+        <div class="footer_top">
+            <figure class="text_y"><img src="./images/text_y.png" alt=""></figure>
+            <div class="contact">
+                <a href="#"><img src="./images/icon/Line.png" alt=""></a>
+                <a href="#"><img src="./images/icon/Instagram.png" alt=""></a>
+                <a href="#"><img src="./images/icon/Facebook.png" alt=""></a>
+                <small>TEL：03-5333-0802
+                    <br>MAIL：okayama-accent-tshirt@gmail.com
+                </small>
+            </div>
+        </div>
+        <div class="footer_buttom">
+            <ul class="nav_buttom">
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">限時特賣</a></li>
+                <li><a href="#">所有商品</a></li>
+                <li><a href="#">會員中心</a></li>
+                <li><a href="#">購物車</a></li>
+                <small>Copyright &copy; 2024 PEKABOO All Rights Reserved.</small>
+            </ul>
+        </div>
+
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style_c3.css">
+</head>
+
+<body>
+    <header>
+        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    </header>
+    <!-- 購物車進度條 -->
+    <div id="checkout">
+        <div class="container">
+            <div class="circle1">
+                <span class="text">1</span>
+                <p>購物車</p>
+            </div>
+
+            <div class="circle2">
+                <span class="text">2</span>
+                <p>填寫資料</p>
+            </div>
+
+            <div class="circle3">
+                <span class="text">3</span>
+                <p>訂單確認</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="complete">
+        <h2>
+            <a href="#" style="display:inline-block; vertical-align: middle;"><img src="./images/icon/checkmark.svg"
+                    alt=""></a>
+            <span>
+                訂購完成
+                <br>
+                <br>
+                您已經完成本筆交易的訂購程序，感謝您的訂購。
+            </span>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="bestellung">
+            <table>
+                <!-- 訂單資訊  -->
+                <tr>
+                    <th>訂單資訊</th>
+                </tr>
+                <tr class="line">
+                    <td>
+                        訂單編號：20240503
+                    </td>
+                </tr>
+                <tr class="line">
+                    <td>
+                        訂單日期：2024/05/03
+                    </td>
+                </tr>
+                <tr class="line">
+                    <td>
+                        訂單金額：NT.3030
+                    </td>
+                </tr>
+                <tr class="line">
+                    <td>
+                        付款方式：信用卡
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        送貨方式：超商取貨
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>查看訂單商品</span>
+                        <a href="#" style="display:inline-block; vertical-align: middle;"><img
+                                src="./images/icon/Expand_down_light.svg" alt=""></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- 訂單狀態 -->
+        <div class="orderStatus">
+            <table>
+                <tr>
+                    <th colspan="2">訂單狀態</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+
+                        <div class="timeline">
+                            <div class="box_moveForward">
+                                <img class="deliveryLogo" src="./images/logo.png" alt="">
+                            </div>
+
+                            <hr size="5" color="#3A684E" width="1000px">
+                            <div class="deliveryStatus">
+                                <div class="orderCompleted">
+                                    訂單成立
+                                </div>
+                                <div class="send">
+                                    商品已出貨
+                                </div>
+                                <div class="delivering">
+                                    配送中
+                                </div>
+                                <div class="arrived">
+                                    已送達
+                                </div>
+                                <div class="pickup">
+                                    買家已取件
+                                </div>
+                            </div>
+                            <div class="dot">
+                                <div><img src="./images/icon/dot.svg" alt=""></div>
+                                <div><img src="./images/icon/dot.svg" alt=""></div>
+                                <div><img src="./images/icon/dot.svg" alt=""></div>
+                                <div><img src="./images/icon/dot.svg" alt=""></div>
+                                <div><img src="./images/icon/dot.svg" alt=""></div>
+                            </div>
+                        </div>
+
+
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <iframe class="footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+    </footer>
+
+</body>
+
+</html>

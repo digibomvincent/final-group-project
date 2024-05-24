@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 導入jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <!-- 導入awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./style/style_m.css">
+</head>
+
+<body>
+    <header>
+        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    </header>
+    <main>
+        <br>
+        <br>
+        <br>
+        <div class="box">
+            <ul>
+                <li>
+                    <h2 class="register">還差一步</h2>
+                </li>
+                <li>
+                    <p>請輸入你的個人資料，已完成註冊流程！</p>
+                </li>
+                <!-- 信箱 -->
+                <li>
+                    <input type="text" name="user" id="account" title="user" placeholder="用戶名">
+                </li>
+                <!-- 密碼 -->
+                <li>
+                    <div>
+                        <input type="password" placeholder="密碼" id="passwordField" required>
+                        <!-- <input type="password" placeholder="Password" id="account" required> -->
+                        <small><i id="eye" class="fa fa-eye-slash"></i></small>
+                    </div>
+                </li>
+                <!-- 生日日期 -->
+                <li id="order_2">
+                    <p>生日日期</p>
+                    <div class="phone-input">
+                        <!-- 年 -->
+                        <select>
+                            <option selected>年</option>
+                            <option>2014</option>
+                            <option>2013</option>
+                            <option>2012</option>
+                            <option>2011</option>
+                            <option>2010</option>
+                            <option>2009</option>
+                            <option>2009</option>
+                            <option>2008</option>
+                            <option>2007</option>
+                            <option>2006</option>
+                            <option>2005</option>
+                            <option>2004</option>
+                            <option>2003</option>
+                            <option>2002</option>
+                            <option>2001</option>
+                            <option>2000</option>
+                            <option>1999</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1995</option>
+                            <option>1994</option>
+                            <option>1993</option>
+                            <option>1992</option>
+                            <option>1991</option>
+                            <option>1990</option>
+                        </select>
+                        <!-- 月 -->
+                        <select>
+                            <option selected>月</option>
+                            <option>12</option>
+                            <option>11</option>
+                            <option>10</option>
+                            <option>09</option>
+                            <option>08</option>
+                            <option>07</option>
+                            <option>06</option>
+                            <option>05</option>
+                            <option>04</option>
+                            <option>03</option>
+                            <option>02</option>
+                            <option>01</option>
+                        </select>
+                        <!-- 日 -->
+                        <select>
+                            <option selected>日</option>
+                            <option>31</option>
+                            <option>30</option>
+                            <option>29</option>
+                            <option>28</option>
+                            <option>27</option>
+                            <option>26</option>
+                            <option>25</option>
+                            <option>24</option>
+                            <option>23</option>
+                            <option>22</option>
+                            <option>21</option>
+                            <option>20</option>
+                            <option>19</option>
+                            <option>18</option>
+                            <option>17</option>
+                            <option>16</option>
+                            <option>15</option>
+                            <option>14</option>
+                            <option>13</option>
+                            <option>12</option>
+                            <option>11</option>
+                            <option>10</option>
+                            <option>09</option>
+                            <option>08</option>
+                            <option>07</option>
+                            <option>06</option>
+                            <option>05</option>
+                            <option>04</option>
+                            <option>03</option>
+                            <option>02</option>
+                            <option>01</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="button_element_next">
+                    <a href="">立即加入！</a>
+                </li>
+                <li class="button_element_back">
+                    <a href="#">返回上一步</a>
+                </li>
+            </ul>
+
+        </div>
+        <br>
+        <br><br>
+        <script>
+
+        </script>
+    </main>
+    <footer>
+        <div class="footer_top">
+            <figure class="text_y"><img src="./images/text_y.png" alt=""></figure>
+            <div class="contact">
+                <a href="#"><img src="./images/icon/Line.png" alt=""></a>
+                <a href="#"><img src="./images/icon/Instagram.png" alt=""></a>
+                <a href="#"><img src="./images/icon/Facebook.png" alt=""></a>
+                <small>TEL：03-5333-0802
+                    <br>MAIL：okayama-accent-tshirt@gmail.com
+                </small>
+            </div>
+        </div>
+        <div class="footer_buttom">
+            <ul class="nav_buttom">
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">限時特賣</a></li>
+                <li><a href="#">所有商品</a></li>
+                <li><a href="#">會員中心</a></li>
+                <li><a href="#">購物車</a></li>
+                <small>Copyright &copy; 2024 PEKABOO All Rights Reserved.</small>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            // 第一個程式
+            $("#eye").click(function () {
+                var password = document.getElementById("passwordField");
+                if (password.type === "password") {
+                    password.type = "text";
+                    $('#eye').toggleClass("fa-eye fa-eye-slash");
+                } else {
+                    password.type = "password";
+                    $('#eye').toggleClass("fa-eye-slash fa-eye");
+                }
+            });
+
+            // 第二個程式
+            $(".button_element_next a").click(function (e) {
+                e.preventDefault(); 
+                var button = $(this);
+                // 延遲三秒跳轉
+
+                button.text("註冊中．．．");
+                button.css("background-color", "#4d976d");
+                
+                setTimeout(function () {
+                    alert("恭喜註冊成功！");
+                    // 跳到其他網頁
+                    window.location.href = "memberpage.html";
+                }, 3000); // 
+            });
+        });
+    </script>
+</body>
+
+</html>

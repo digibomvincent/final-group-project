@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" info="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style_c2.css">
+</head>
+
+<body>
+    <header>
+        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    </header>
+    <!-- 購物車進度條 -->
+    <div id="checkout">
+        <div class="container">
+            <div class="circle1">
+                <span class="text">1</span>
+                <p>購物車</p>
+            </div>
+
+            <div class="circle2">
+                <span class="text">2</span>
+                <p>填寫資料</p>
+            </div>
+
+            <div class="circle3">
+                <span class="text">3</span>
+                <p>訂單確認</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="info-container">
+        <!-- 收合購物車 -->
+        <div class="sum">
+            <h2>
+                <span>
+                    合計：NT.3030
+                    <br>
+                    <br>
+                    購物車(2件)
+                </span>
+                <a href="#" style="display:inline-block; vertical-align: middle;"><img
+                        src="./images/icon/Expand_down_light.svg" alt=""></a>
+            </h2>
+
+        </div>
+        <!-- 第一列 -->
+        <div class="infoRow">
+            <!-- 第一欄 -->
+            <div class="infoCol">
+                <h4>顧客資料</h4>
+                <div class="contentRow">
+                    <form actiom="" method="post" name="member-form" id="member-form" title="會員資料修改表單">
+
+                        <div class="fill">
+                            <label for="username">顧客姓名</label>
+                            <br>
+                            <br>
+                            <input type="text" name="username" id="username" title="請輸入姓名" placeholder="請輸入姓名"
+                                style="width: 98%; height: 40px;" required autofocus>
+                        </div>
+
+                        <div class="fill">
+                            <label for="email">電子信箱</label>
+                            <br>
+                            <br>
+                            <input type="email" name="email" id="email" title="請輸入電子郵件" placeholder="請輸入電子郵件"
+                                style="width: 98%; height: 40px;">
+                        </div>
+
+                        <div class="fill">
+                            <label for="phone">電話號碼</label>
+                            <br>
+                            <br>
+                            <input type="phone" name="phone" id="phone" title="請輸入電話" placeholder="0912 345 678"
+                                maxlength="10" style="width: 98%; height: 40px;">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!-- 第二欄 -->
+            <div class="infoCol">
+                <h4>送貨資料</h4>
+
+                <div class="contentRow">
+                    <form actiom="" method="post" name="member-form" id="member-form" title="會員資料修改表單">
+                        <div class="fill">
+                            <p>已選擇的送貨方式：7-11取貨不付款(C2C)</p>
+                            <br>
+                            <input type="checkbox" name="receiver-customer" id="receiver-customer" value="收件人資料與顧客資料相同">
+                            <label for="receiver-customer">收件人資料與顧客資料相同</label>
+                        </div>
+
+                        <div class="fill">
+                            <label for="receiver-name">收件人名稱</label>
+                            <br>
+                            <br>
+                            <input type="text" name="username" id="username" title="請輸入姓名"
+                                style="width: 98%; height: 40px;">
+                            <br>
+                            <br>
+                            <p>請填入收件人真實姓名，以確保順利收件</p>
+                        </div>
+
+                        <div class="fill">
+                            <label for="receiver-phone">收件人電話號碼</label>
+                            <br>
+                            <br>
+                            <input type="receiver-phone" name="receiver-phone" id="receiver-phone" title="請輸入電話"
+                                placeholder="0912 345 678" maxlength="10" style="width: 98%; height: 40px;">
+                        </div>
+
+                    </form>
+                    <div class="fill">
+
+                        <p>
+                            <img style="display:inline-block; vertical-align: middle; margin-left: 10px;"
+                                src="./images/icon/7-11-logo.svg" alt="">
+                            選擇門市
+                        </p>
+                        <br>
+                        <button style="margin-left: 10px;" type="button">搜尋門市</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 第二列 -->
+        <div class="infoRow">
+            <!-- 第一欄 -->
+            <div class="infoCol">
+                <h4>付款資料</h4>
+                <div class="contentRow">
+                    <form actiom="" method="post" name="member-form" id="member-form" title="會員資料修改表單">
+                        <div class="fill">
+                            <label for="way-to-pay">已選擇的付款方式：信用卡付款</label>
+                        </div>
+                        <div class="fill">
+                            <input type="text" name="way-to-pay" id="way-to-pay1" title="請輸入姓名" placeholder="卡號"
+                                style="width: 100%; height: 40px;" required>
+                        </div>
+                        <div class="fill">
+                            <input type="text" name="way-to-pay" id="way-to-pay2" title="請輸入姓名" placeholder="持卡人姓名"
+                                style="width: 100%; height: 40px;" required>
+                        </div>
+                        <div class="fill">
+                            <input type="text" name="way-to-pay" id="way-to-pay3" title="請輸入姓名"
+                                style="width: 100%; height: 40px;" placeholder="有效期 (MM/YY)" required>
+                        </div>
+                        <div class="fill">
+                            <input type="text" name="way-to-pay" id="way-to-pay4" title="請輸入姓名" placeholder="安全碼"
+                                style="width: 100%; height: 40px;" required>
+                        </div>
+                </div>
+                <div>
+                    <div class="fill" style="padding-left: 30px;">
+                        <input type="checkbox" name="agree-checkbox" id="agree-checkbox"
+                            value="同意記住信用卡資訊及《信用卡交易協議》，以便下次快速付款。">
+                        <label for="agree-checkbox">同意記住信用卡資訊及《信用卡交易協議》，以便下次快速付款。</label>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <!-- 第二欄 -->
+            <div class="infoCol">
+                <h4>訂單備註</h4>
+                <div class="contentRow">
+                    <form actiom="" method="post" name="member-form" id="member-form" title="會員資料修改表單">
+                        <div class="fill">
+                            <label for="message"></label>
+                            <textarea name="message" id="message" cols="30" rows="5"
+                                placeholder="有什麼想告訴賣家嗎？"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <!-- 第三列 -->
+        <div class="infoRow" style=" width: 50%;">
+            <!-- 第一欄 -->
+            <div class="infoCol" style="height: 300px;">
+                <h4>發票索取</h4>
+                <div class="contentRow">
+                    <form actiom="" method="post" name="member-form" id="member-form" title="會員資料修改表單"
+                        style="width: 90%; height: 40px;">
+                        <div class="fill">
+                            <label for="receipt-type">發票類型</label>
+                            <br>
+                            <br>
+                            <select name="receipt-type" id="receipt-type">
+                                <option value="雲端發票">雲端發票</option>
+                                <option value="二聯式發票(個人)">二聯式發票(個人)</option>
+                                <option value="三聯式發票(公司行號)">二聯式發票(個人)</option>
+                                <option value="捐贈發票">捐贈發票</option>
+                            </select>
+                        </div>
+                        <div class="fill">
+                            <label for="carrier">載具類型</label>
+                            <br>
+                            <br>
+                            <input type="carrier" name="carrier" id="carrier" title="請輸入載具編號" placeholder="請輸入載具編號"
+                                style="width: 90%; height: 40px;">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- 第四列 -->
+        <div class="submitRow">
+            <div class="submitAgree">
+                <h4>提交訂單表示我同意PEKABOO的<span style="color: blue;">服務條款</span>,<span
+                        style="color: blue;">防詐騙宣導</span>和<span style="color: blue;">隱私政策</span>。</h4>
+                <div class="submitContent">
+                    <button type="button"><a href="./confirm.html" target="_top">提交訂單</a></button>
+                </div>
+                <div class="submitBack" style="margin-bottom: 10px; margin-left: 10px;">
+                   <span style="color: blue;align-items: left;  vertical-align: middle; padding-right: 600px;">＜返回購物車</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <iframe class="footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+    </footer>
+</body>
+
+</html>

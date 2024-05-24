@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style_m.css">
+    <link rel="stylesheet" href="./style/react.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    </header>
+    <main>
+        <br>
+        <br>
+        <br>
+        <main id="react-container"></main>
+    </main>
+    <script type="text/babel">
+        // 定义组件
+        class App extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    currentPage: 'member'
+                };
+            }
+
+            // 处理页面切换
+            handlePageChange(page) {
+                this.setState({ currentPage: page });
+            }
+
+            render() {
+                return (
+                    <div>
+                        <div className="logo">
+                        </div>
+                        <div className="menu">
+                            {/* 分页按钮 */}
+                            <button onClick={() => this.handlePageChange('member')}>會員資訊</button>
+                            <button onClick={() => this.handlePageChange('cashback')}>回饋金</button>
+                            <button onClick={() => this.handlePageChange('order')}>訂單</button>
+                        </div>
+                        {/* 显示当前页面内容 */}
+                        <div className="content">
+                            {this.renderPage()}
+                        </div>
+                    </div>
+                );
+            }
+
+            // 根据当前页面状态渲染不同的页面内容
+            renderPage() {
+                const { currentPage } = this.state;
+                switch (currentPage) {
+                    case 'member':
+                        return (
+                            <div className="container">
+                                <br />
+                                <br />
+                                <div className="memberInfo">
+                                    <img src="./images/icon/logo-01-weed.svg" alt="" className="menuLogo" />
+                                    <p>andy19278</p>
+                                    <p className="memberState">一般會員</p>
+                                </div>
+                                <div className="form">
+                                    <div className="section-title">
+                                        <p>編輯會員資料</p>
+                                    </div>
+                                    <div className="form-row">
+                                        <div className="form-group">
+                                            <p>暱稱</p>
+                                            <input type="text" id="inputForm1" />
+                                        </div>
+                                        <div className="form-group">
+                                            <p>連絡電話(選填)</p>
+                                            <div className="phone-input">
+                                                <select>
+                                                    <option>TW<span>+886</span></option>
+                                                </select>
+                                                <input type="text" id="inputForm3" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="form-row">
+                                        <div className="form-group">
+                                            <p>電郵</p>
+                                            <input type="text" id="inputForm2" />
+                                        </div>
+                                        <div className="form-group">
+                                            <p>密碼</p>
+                                            <div>
+                                                <a href="#" className="black">設定新密碼</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="form-row">
+                                        <div className="form-group">
+                                            <div className="mailBtn"><a href="#">發送驗證信</a></div>
+                                        </div>
+                                        <div className="form-group">
+                                            <p>信用卡</p>
+                                            <div>
+                                                <a href="#" className="black">新增信用卡</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="form-row justify-content-end">
+                                    <div className="form-group-2">
+                                        <ul>
+                                            <li id="cancelBtn"><a href="#" className="black">取消</a></li>
+                                        </ul>
+                                    </div>
+                                    <div className="form-group-2">
+                                        <ul>
+                                            <li id="saveBtn"><a href="#">儲存變更</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    case 'cashback':
+                        return (
+                            <div className="container">
+                                <br />
+                                <br />
+                                <div className="box2">
+                                    <div className="memberInfo">
+                                        <img src="./images/icon/logo-01-weed.svg" alt="" className="menuLogo" />
+                                        <p>andy19278</p>
+                                        <p className="memberState">一般會員</p>
+                                    </div>
+                                    <div className="form">
+                                        <p className="form">目前回饋金為ooo</p>
+                                    </div></div></div>
+                        );
+                    case 'order':
+                        return (
+                            <div className="container">
+                                <br />
+                                <br />
+                                <div className="box2">
+                                    <div className="memberInfo">
+                                        <img src="./images/icon/logo-01-weed.svg" alt="" className="menuLogo" />
+                                        <p>andy19278</p>
+                                        <p className="memberState">一般會員</p>
+                                    </div>
+                                    <div className="form">
+                                    <p className="form">你的訂單是20250515001</p>
+                                </div>
+                                    <div class="timeline">
+                                        <div class="box_moveForward">
+                                            <img class="deliveryLogo" src="./images/logo.png" alt=""/>
+                                        </div>
+                                        <hr size="5" color="#3A684E" width="1000px"/>
+                                            <div class="deliveryStatus">
+                                                <div class="orderCompleted">
+                                                    訂單成立
+                                                </div>
+                                                <div class="send">
+                                                    商品已出貨
+                                                </div>
+                                                <div class="delivering">
+                                                    配送中
+                                                </div>
+                                                <div class="arrived">
+                                                    已送達
+                                                </div>
+                                                <div class="pickup">
+                                                    買家已取件
+                                                </div>
+                                            </div>
+                                            <div class="dot">
+                                                <div><img src="./images/icon/dot.svg" alt=""/></div>
+                                                <div><img src="./images/icon/dot.svg" alt=""/></div>
+                                                <div><img src="./images/icon/dot.svg" alt=""/></div>
+                                                <div><img src="./images/icon/dot.svg" alt=""/></div>
+                                                <div><img src="./images/icon/dot.svg" alt=""/></div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    default:
+                        return <h1>Page Not Found</h1>;
+                }
+            }
+        }
+
+        // 渲染组件到页面
+        ReactDOM.render(
+            <App />,
+            document.getElementById('react-container')
+        );
+    </script>
+    <footer>
+        <div class="footer_top">
+            <figure class="text_y"><img src="./images/text_y.png" alt=""></figure>
+            <div class="contact">
+                <a href="#"><img src="./images/icon/Line.png" alt=""></a>
+                <a href="#"><img src="./images/icon/Instagram.png" alt=""></a>
+                <a href="#"><img src="./images/icon/Facebook.png" alt=""></a>
+                <small>TEL：03-5333-0802
+                    <br>MAIL：okayama-accent-tshirt@gmail.com
+                </small>
+            </div>
+        </div>
+        <div class="footer_buttom">
+            <ul class="nav_buttom">
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">限時特賣</a></li>
+                <li><a href="#">所有商品</a></li>
+                <li><a href="#">會員中心</a></li>
+                <li><a href="#">購物車</a></li>
+                <small>Copyright &copy; 2024 PEKABOO All Rights Reserved.</small>
+            </ul>
+        </div>
+
+    </footer>
+</body>
+
+</html>

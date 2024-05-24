@@ -1,0 +1,956 @@
+@charset "UTF-8";
+
+/* 以下 eric reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 以上 eric reset */
+/* 變數區 */
+:root {
+    /* ctrl+H +> var(--xxxx)取代*/
+    --bg: #F9FAF5;
+    --green: #3A684E;
+    --yellow: #FFDD50;
+    --b60: #666666;
+    --b20: #CDCDCD;
+    --b5: #EDEDED;
+    --b80: #343434;
+}
+
+/* 共用區 */
+* {
+    box-sizing: border-box;
+    /* 不累加border & padding */
+}
+
+body {
+    font-family:
+        /* 英文有-或單詞不用引號 要給也可以 */
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    color: var(--b80);
+    /* 全網字體預設 */
+    background-color: var(--bg);
+    min-width: 1000px;
+
+}
+
+img {
+    display: block;
+    width: 100%;
+    /* svg預設100% */
+}
+
+a {
+    display: block;
+    color: var(--bg-color-3);
+    text-decoration: none;
+    /* 取消預設底線 */
+}
+
+/* top */
+.topbar {
+    position: fixed;
+    /* 加了就不會自動延展 */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* 主軸水平 */
+    align-items: center;
+    /* 副軸垂直對齊 */
+    padding: 25px;
+    border-bottom: 1px solid #3A684E;
+}
+
+.text_small {
+    display: flex;
+}
+
+.text_small a {
+    margin-right: 10px;
+}
+
+.topbar nav ul {
+    display: flex;
+}
+
+.text_small ul {
+    display: flex;
+}
+
+.menu li {
+    margin: 0 20px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: var(--green);
+}
+
+.topbar nav li {
+    margin: 0 10px;
+}
+
+.nav {
+    width: 100%;
+    height: 11.8vh;
+    /* iframe有預設高*/
+}
+
+.logo {
+    position: absolute;
+    width: 200px;
+    top: 78%;
+    left: 43%;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.banner1 {
+    height: 548px;
+    object-fit: cover;
+}
+
+/* 內容 */
+
+.title_y {
+    font-size: 3rem;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    color: var(--yellow);
+    -webkit-text-stroke: 1.5px var(--green);
+    text-shadow: var(--green) -2px 2px;
+    line-height: 60%;
+}
+
+.sale {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sale_content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.product {
+    width: 230px;
+    height: 345px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.cloth img {
+    height: 258px;
+    object-fit: cover;
+    border-top-left-radius: 40px;
+}
+
+.cloth h2 {
+    font-size: .8rem;
+    margin: 10px 5px;
+    line-height: 150%;
+}
+
+.price {
+    display: flex;
+    align-items: end;
+    margin-bottom: 5px;
+
+}
+
+.price h2 {
+    font-size: .8rem;
+    margin: 0 5px;
+}
+
+.price h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.addcart {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    right: 5px;
+    bottom: 5px;
+    background-color: var(--yellow);
+    border-radius: 5px;
+    border: var(--green) solid 1.5px;
+    box-shadow: var(--green) -2px 2px;
+    transition: all 0.1s;
+}
+
+.addcart:active {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    right: 7px;
+    bottom: 3px;
+    background-color: var(--yellow);
+    border-radius: 5px;
+    border: var(--green) solid 1.5px;
+    box-shadow: var(--green) 0px 0px;
+}
+
+.tag {
+    position: absolute;
+    right: 5px;
+    top: 225px;
+    padding: 5px;
+    background-color: var(--bg);
+    border-radius: 5px;
+    opacity: 0.8;
+    font-size: 0.8rem;
+}
+
+.view {
+    font-size: 1.25rem;
+    color: var(--green);
+    background-color: var(--bg);
+    border: var(--green) solid 1px;
+    border-radius: 99px;
+    padding: 10px 20px;
+}
+
+@keyframes view {
+    0% {
+        box-shadow: 0 0 10px 1em transparent;
+    }
+
+    20% {
+        color: var(--green);
+        text-shadow: var(--green) 0 0;
+        -webkit-text-stroke: 0 var(--green);
+    }
+
+    80% {
+        box-shadow: 0 0 0 0 var(--yellow);
+    }
+
+    100% {
+        text-shadow: var(--green) -1px 1px;
+        font-weight: bold;
+        color: var(--yellow);
+        -webkit-text-stroke: 1px var(--green);
+    }
+}
+
+.view:hover {
+    animation: view 1s forwards;
+}
+
+/* footer */
+.footer {
+    width: 100%;
+    height: 295px;
+}
+
+.footer_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--green);
+    padding-bottom: 30px;
+}
+
+.contact {
+    display: flex;
+}
+
+.contact>* {
+    margin: 0 25px;
+}
+
+.contact small {
+    color: var(--b5);
+    font-size: 1rem;
+    line-height: 150%;
+}
+
+.text_y {
+    width: 280px;
+    margin: 30px 0;
+}
+
+.footer_buttom {
+    background-color: #1A1A1A;
+    padding: 25px;
+}
+
+.nav_buttom {
+    display: flex;
+    justify-content: center;
+}
+
+.nav_buttom>* {
+    padding: 0 30px;
+    color: var(--b5);
+}
+
+.nav_buttom li {
+    border-right: var(--b5) 1px solid;
+}
+
+/* women */
+.category {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+.category>* {
+    margin-bottom: 10px;
+}
+
+.category div {
+    display: flex;
+    justify-content: end;
+}
+
+.category .page {
+    display: flex;
+}
+
+.category h1 {
+    font-size: 1.5rem;
+    color: var(--green);
+}
+
+.page h3 {
+    margin: 0 3px;
+    display: flex;
+    align-items: center;
+}
+
+.page a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* cloth */
+.one_cloth {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    align-items: center;
+}
+
+.one_cloth h2 {
+    font-size: 1rem;
+    align-self: flex-start
+}
+
+.pic_s {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pic_s img {
+    width: 77px;
+    height: 93px;
+    object-fit: cover;
+}
+
+.cloth_box {
+    display: flex;
+    margin-top: 20px;
+}
+
+.pic_l img {
+    width: 352px;
+    height: 422px;
+    object-fit: cover;
+}
+
+.cloth_box>* {
+    margin: 0 10px;
+}
+
+.cloth_box h1 {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.cloth_box h2 {
+    font-weight: bold;
+}
+
+.color_bar {
+    display: flex;
+    padding-left: 4px;
+}
+
+.color_bar>* {
+    margin-top: 30px;
+    margin-right: 15px;
+}
+
+.border_box {
+    position: relative;
+}
+
+.border_box label {
+    position: absolute;
+    left: 0px;
+    width: 37px;
+    height: 37px;
+    text-align: center;
+    line-height: 37px;
+}
+
+.border_box .blue {
+    background-color: rgb(74, 196, 196);
+}
+
+.border_box .black {
+    background-color: rgb(0, 0, 0);
+}
+
+.border_box .white {
+    background-color: rgb(255, 255, 255);
+    border: var(--b80) solid 1px;
+}
+
+.border_box input {
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.border_box input[type="checkbox"]:checked+label {
+    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--b80);
+    /* 設置被勾選時label的邊框顏色 */
+}
+
+.size_bar {
+    display: flex;
+    padding-left: 4px;
+}
+
+.size_bar>* {
+    margin-top: 35px;
+    margin-right: 15px;
+}
+
+.count_bar {
+    margin-top: 33px;
+    border: solid 1px black;
+    height: 37px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.count_bar span {
+    font-size: 1rem;
+    line-height: 37px;
+}
+
+.count_bar .btn {
+    background-color: transparent;
+    border: 0px;
+    font-size: 1rem;
+}
+
+.addcart_bar {
+    margin-top: 33px;
+    height: 37px;
+}
+
+.addcart_bar .btn {
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    background-color: var(--green);
+    color: #FFFFFF;
+    border: 0px;
+}
+
+.cloth_detail {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    width: 465px;
+    background-color: var(--b5);
+    color: var(--b60);
+    border: solid var(--b20);
+    border-width: 1px 1px 0px 1px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.tab.active {
+    background-color: var(--bg);
+    border-top: 1px solid var(--b80);
+    color: black;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    max-width: 930px;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.content.active {
+    display: block;
+}
+
+.logo_roll {
+    height: 90px;
+    transition: transform 1s ease;
+    transform: translateX(-232.5px);
+}
+
+/* 購物車進度條 */
+#checkout {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    width: 100%;
+}
+
+#checkout .container {
+    display: flex;
+    justify-content: center;
+}
+
+#checkout p {
+    text-align: center;
+}
+
+/* 購物車 */
+/* .square{
+    height:80px;
+    width: 100%;
+} */
+#checkout .circle1 {
+    border: 1px solid #CDCDCD;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #CDCDCD;
+    float: left;
+}
+
+#checkout .circle1 .text {
+    font-size: 16px;
+    color: #666666;
+    display: flex;
+    line-height: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 14px;
+}
+
+#checkout .circle1 p {
+    margin-top: 12px;
+    /* Add some spacing between text and number */
+    text-align: center;
+}
+
+/* 填寫資料 */
+#checkout .circle2 {
+    border: 1px solid #CDCDCD;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #CDCDCD;
+    align-items: center;
+    margin-left: 201px;
+}
+
+#checkout .circle2 .text {
+    font-size: 16px;
+    color: #666666;
+    display: flex;
+    line-height: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 14px;
+    /* margin-top: 10px; */
+}
+
+#checkout .circle2 p {
+    margin-top: 12px;
+    white-space: nowrap;
+    text-align: left;
+}
+
+/* 訂單確認 */
+#checkout .circle3 {
+    border: 1px solid #3A684E;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #3A684E;
+    margin-left: 208px;
+    float: right;
+}
+
+#checkout .circle3 .text {
+    font-size: 16px;
+    color: #F9FAF5;
+    display: flex;
+    line-height: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 14px 14px;
+
+}
+
+#checkout .circle3 p {
+    margin-top: 12px;
+    display: block;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.complete {
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.complete h2 {
+    flex: 1;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    /* margin-top: 30px;
+    display: flex;
+    align-items: center; */
+}
+
+.bestellung table {
+    border: 1px solid #ccc;
+    /* 邊框分開 */
+    /* border-collapse: collapse; */
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.bestellung th {
+    background-color: #bad2a7;
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
+    line-height: 30px;
+    border-bottom: #ccc;
+    text-align: center;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.bestellung td {
+    border-bottom: 1px solid #ccc;
+    line-height: 30px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: top;
+}
+
+.bestellung .line td {
+    border: none;
+}
+
+.orderStatus table {
+    border: 1px solid #ccc;
+    /* 邊框分開 */
+    /* border-collapse: collapse; */
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.orderStatus th {
+    background-color: #bad2a7;
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
+    line-height: 30px;
+    border-bottom: #ccc;
+    text-align: center;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.orderStatus td {
+    height: 300px;
+    display: flex;
+    
+    justify-content: center;
+}
+
+.box_moveForward img {
+    margin-top: 50px;
+    margin-left: 55px;
+    width: 80px;
+    height: 80px;
+
+}
+.timeline{
+    position: relative;
+    width: 1000px;
+}
+.deliveryStatus {
+    display: flex;
+    align-items: center;
+    text-align: center; 
+}
+
+.deliveryStatus div {
+    margin: 70px 0 0 0;
+    flex: 1;
+    
+    
+  
+}
+
+.box_moveForward {
+    position: relative;
+    display: inline-block;
+}
+
+.deliveryLogo {
+    width: 1000px;
+    height: 80px;
+    position: relative;
+    animation-name: deliveryLogo;
+    animation-duration: 6s;
+    /* 循環播放次數 */
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    top: 40px;
+    z-index: 3;
+}
+.dot div{
+    flex:1;
+}
+
+.dot {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 134px;
+}
+
+.dot img {
+    margin: 0 auto;
+    width: 16px;
+    height: 16px;
+}
+
+hr {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+@keyframes deliveryLogo {
+    0% {
+        left: 0px;
+        top: 40px;
+    }
+
+    25% {
+        left: 196px;
+        top: 40px;
+    }
+
+    50% {
+        left: 400px;
+        top: 40px;
+    }
+
+    75% {
+        left: 600px;
+        top: 40px;
+    }
+
+    100% {
+        left: 800px;
+        top: 40px;
+    }
+}

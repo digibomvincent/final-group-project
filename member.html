@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- 導入jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+        <!-- 導入awesome icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./style/style_m.css">
+</head>
+
+<body>
+    <header>
+        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    </header>
+    <main>
+        <br>
+        <div class="box">
+            <h2 class="register">登入</h2>
+            <ul>
+                <!-- 信箱 -->
+                <li>
+                    <input type="text" class="" name="account" id="account" title="使用者帳號" placeholder="電子郵件">
+                </li>
+                <!-- 密碼 -->
+                <li>
+                    <div>
+                        <input type="password" placeholder="密碼" id="passwordField" required>
+                        <!-- <input type="password" placeholder="Password" id="account" required> -->
+                        <small><i id="eye" class="fa fa-eye-slash"></i></small>
+                    </div>
+                <li>
+                    <div><a href="#" class="forget">忘記密碼?</a></div>
+                </li>
+                <li class="button_element_next">
+                    <a href="">開始購物</a>
+                </li>
+                <li>
+                    <a href="#" class="register">還不是會員？</a>
+                </li>
+                <div class="icon_link">
+                    <li class="button_element_login"><a href="./member_register.html" target="_top">註冊會員</a></li>
+                    <li>
+                        <div class="sns"><a href="#">以Facebook</a>
+                        <a href="#">/Google</a>
+                        <a href="#">/Line 快速登入</a></div>
+                        </th>
+                    </li>
+                    <li>
+                        <div class="sns">
+                            <a href="#"><img src="./images/icon/Facebook_black.svg" alt=""></a>
+                            <a href="#"><img src="./images/icon/google_black.svg" alt=""></a>
+                            <a href="#"><img src="./images/icon/Line_black.svg" alt=""></a>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <script>
+
+        </script>
+    </main>
+    <footer>
+        <div class="footer_top">
+            <figure class="text_y"><img src="./images/text_y.png" alt=""></figure>
+            <div class="contact">
+                <a href="#"><img src="./images/icon/Line.png" alt=""></a>
+                <a href="#"><img src="./images/icon/Instagram.png" alt=""></a>
+                <a href="#"><img src="./images/icon/Facebook.png" alt=""></a>
+                <small>TEL：03-5333-0802
+                    <br>MAIL：okayama-accent-tshirt@gmail.com
+                </small>
+            </div>
+        </div>
+        <div class="footer_buttom">
+            <ul class="nav_buttom">
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">限時特賣</a></li>
+                <li><a href="#">所有商品</a></li>
+                <li><a href="#">會員中心</a></li>
+                <li><a href="#">購物車</a></li>
+                <small>Copyright &copy; 2024 PEKABOO All Rights Reserved.</small>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        $("#eye").click(function () {
+            var password = document.getElementById("passwordField");
+            if (password.type === "password") {
+                password.type = "text";
+                $('#eye').toggleClass("fa-eye fa-eye-slash");
+            } else {
+                password.type = "password";
+                $('#eye').toggleClass("fa-eye-slash fa-eye");
+            }
+        });
+    </script>
+</body>
+
+</html>

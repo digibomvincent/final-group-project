@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    </header>
+    <div class="iframe_blank"></div>
+    <main>
+        <section class="category">
+            <h2>所有風格 / 女裝 / 夏天 </h2>
+            <ul class="styling_nav">
+                <li>篩選</li>
+                <li onclick="openUpload()">上傳領回饋!</li>
+            </ul>
+            <div>
+                <ul class="page">
+                    <h3>168</h3>
+                    <h3>ITEMS</h3>
+                    <li><a href="#">&lt;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="onestyle">
+            <h1>穿搭內容</h1>
+            <div class="br"></div>
+            <div class="onestyle_box">
+                <div class="onestyle_pic1">
+                    <img src="./images/styling/style2.jpg" alt="">
+                    <div class="onestyle_pic2">
+                        <img src="./images/styling/style2-1.jpg" alt="">
+                        <img src="./images/styling/style2-2.jpg" alt="">
+                        <img src="./images/styling/style2-1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="onestyle_content">
+                    <div class="onestyle_info">
+                        <figure class="onestyle_head">
+                            <img src="./images/styling/f1.jpg" alt="">
+                        </figure>
+                        <div class="onestyle_user">
+                            <h2>Pinky</h2>
+                            <h2>165 cm</h2>
+                        </div>
+                    </div>
+                    <p>長版的V領拼色條紋洋裝內搭〈Healthknit〉連帽上衣，外搭尼龍狩獵背心讓整體有層次感！下身穿著〈Orslow〉8號褲，休閒十足卻不無聊～</p>
+                    <div class="onestyle_like">
+                        <img src="./images/icon/like2.png" alt="">
+                        <h1>收藏</h1>
+                    </div>
+                    <h1>穿搭單品</h1>
+                    <div class="onestyle_tag">
+                        <div class='box'>
+                            <img src="./images/cloth/cl1.webp" alt="" />
+                            <div>
+                                <h2>日系可愛配色胸口刺繡舒適透氣上衣</h2>
+                                <h2>尺寸:S</h2>
+                                <h2>NT.1080</h2>
+                            </div>
+                        </div>
+                        <div class='box'>
+                            <img src="./images/cloth/cl1.webp" alt="" />
+                            <div>
+                                <h2>日系可愛配色胸口刺繡舒適透氣上衣</h2>
+                                <h2>尺寸:S</h2>
+                                <h2>NT.1080</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class='styling_mask' onClick="closeUpload()"></div>
+        <section id='upload'>
+            <h1>穿搭分享領回饋</h1>
+            <div class='upload_content'>
+                <div class='upload_pic'>
+                    <img src="./images/icon/camera.svg" alt="" >
+                    上傳照片
+                </div>
+
+                <div>
+                    <h2>單品分類</h2>
+                    <h2>歷史訂單</h2>
+                    <h2>身高(cm)</h2>
+                </div>
+
+                <div>
+                    <div>站內分類搜尋 <span>&gt;</span> </div>
+                    <div>歷史訂單搜尋 <span>&gt;</span></div>
+                    <input type="number" placeholder="cm" >
+                </div>
+
+            </div>
+        </section>
+
+        
+    </main>
+
+    <section class="category">
+        <div>
+            <ul class="page">
+                <h3>168</h3>
+                <h3>ITEMS</h3>
+                <li><a href="#">&lt;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <iframe class="footer" src="./footer.html" frameborder="0"></iframe>
+    </footer>
+    <script>
+        function openUpload() {
+            document.querySelector('.styling_mask').style.display = 'block';
+            document.getElementById('upload').style.display = 'block';
+        }
+
+        function closeUpload() {
+            document.querySelector('.styling_mask').style.display = 'none';
+            document.getElementById("upload").style.display = "none";
+        }
+
+    </script>
+
+</body>
+
+</html>

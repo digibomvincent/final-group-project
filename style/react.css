@@ -1,0 +1,337 @@
+:root {
+    /* ctrl+H +> var(--xxxx)取代*/
+    --bg: #F9FAF5;
+    --green: #3A684E;
+    --yellow: #FFDD50;
+    --b60: #666666;
+    --b20: #CDCDCD;
+    --b5: #EDEDED;
+    --b80: #343434;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 16pt;
+}
+
+.menu {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    width: 1200px;
+    height: 52px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menuLogo {
+    width: 2.625rem;
+    height: 2.625rem;
+}
+
+.menu button {
+    background-color: #EDEDE9;
+    color: var(--b80);
+    border: 0.5px solid #DBDCD7;
+    cursor: pointer;
+    width: 400px;
+    height: 52px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu button:hover {
+    background-color: #f9faf5;
+    border-bottom: none;
+    border-top: 2px solid var(--green);
+    font-weight: bold;
+    transition: .5s;
+}
+
+.form p {
+    font-size: 1rem;
+}
+
+.content {
+    width: 1200px;
+    height: 564px;
+    background-color: #f9faf5;
+    margin: 0;
+}
+
+
+.memberInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.memberInfo img {
+    margin-right: 0.5rem;
+}
+
+.memberInfo p {
+    margin-right: 0.5rem;
+}
+
+
+.section-title {
+    margin-bottom: 2rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.form-group {
+    display: flex;
+    margin-right: 6.25rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group-2 {
+    display: flex;
+
+}
+
+.form-group p {
+    margin-right: 2rem;
+    ;
+}
+
+.form-group-2 {
+    display: flex;
+    margin-right: 2rem;
+}
+
+
+/* 超連結 */
+.form-row a {
+    font-size: 1rem;
+}
+
+.black {
+    color: #343434;
+}
+
+.form-group-2 a {
+    text-decoration: none;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.phone-input {
+    display: flex;
+}
+
+/* .phone-input select,
+.phone-input input {
+  margin-right: 10px;
+} */
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+#cancelBtn {
+    width: 155px;
+    height: 44px;
+    color: #000000;
+    background-color: #f9faf5;
+    border: 0.5px solid #000000;
+    text-align: center;
+    line-height: 44px;
+    font-size: 1.25rem;
+}
+
+.memberState {
+    padding: 0 15px;
+    background-color: var(--green);
+    color: var(--bg);
+    border-radius: 99px;
+}
+
+#saveBtn {
+    width: 139px;
+    height: 44px;
+    color: var(--bg);
+    background-color: var(--green);
+    text-align: center;
+    line-height: 44px;
+    font-size: 1.25rem;
+}
+
+.mailBtn {
+    width: 23.87rem;
+    height: 2.5rem;
+    color: #ffffff;
+    background-color: var(--green);
+    text-align: center;
+    line-height: 44px;
+    font-size: 20px;
+    margin-left: 4rem;
+}
+
+#inputForm1 {
+    width: 23.87rem;
+    height: 2.5rem;
+    background-color: transparent;
+    border: 1px solid var(--b20);
+    color: var(--b80);
+    font-size: 16pt;
+}
+
+#inputForm2 {
+    width: 23.87rem;
+    height: 2.5rem;
+    background-color: transparent;
+    border: 1px solid var(--b20);
+    color: var(--b80);
+    font-size: 16pt;
+}
+
+#inputForm3 {
+    margin: 0;
+    width: 31.83vh;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid var(--b20);
+    color: var(--b80);
+    font-size: 16pt;
+}
+
+select {
+    background: transparent;
+    border: 1px solid var(--b20);
+    margin: 0;
+    width: 6.3125rem;
+    height: 2.5rem;
+    box-sizing: border-box;
+    font-size: 14pt;
+    color: #000000;
+}
+
+.container {
+    width: 1200px;
+    height: 564px;
+    background-color: transparent;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    white-space: nowrap;
+}
+
+/* 動畫 */
+
+.box_moveForward img {
+    margin-top: 50px;
+    margin-left: 55px;
+    width: 80px;
+    height: 80px;
+
+}
+
+.timeline {
+    position: relative;
+    width: 1000px;
+}
+
+.deliveryStatus {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.deliveryStatus div {
+    margin: 70px 0 0 0;
+    flex: 1;
+
+
+}
+
+.box_moveForward {
+    position: relative;
+    display: inline-block;
+}
+
+.deliveryLogo {
+    width: 1000px;
+    height: 80px;
+    position: relative;
+    animation-name: deliveryLogo;
+    animation-duration: 6s;
+    /* 循環播放次數 */
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    top: 40px;
+    z-index: 3;
+}
+
+.dot div {
+    flex: 1;
+}
+
+.dot {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 134px;
+}
+
+.dot img {
+    margin: 0 auto;
+    width: 16px;
+    height: 16px;
+}
+
+hr {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+@keyframes deliveryLogo {
+    0% {
+        left: 0px;
+        top: 40px;
+    }
+
+    25% {
+        left: 196px;
+        top: 40px;
+    }
+
+    50% {
+        left: 400px;
+        top: 40px;
+    }
+
+    75% {
+        left: 600px;
+        top: 40px;
+    }
+
+    100% {
+        left: 800px;
+        top: 40px;
+    }
+}
