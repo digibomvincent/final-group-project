@@ -181,7 +181,7 @@ a {
 }
 
 
-/* face */
+/* happyface */
 .face1_box,
 .face2_box {
     position: fixed;
@@ -286,6 +286,31 @@ a {
     100% {
         transform: translate(0, 0)
     }
+}
+
+/* dizzy face */
+.face_dizzy>div {
+    position: relative;
+}
+.eye_l_dizzy,
+.eye_r_dizzy{
+    position: absolute;
+    width: 28px;
+    top: 110px;
+    animation: eyes 1.5s ease-in-out infinite;
+}
+.eye_l_dizzy{
+    left: 70px;
+}
+.eye_r_dizzy{
+    left: 135px;
+}
+.mouth_dizzy {
+    position: absolute;
+    width: 45px;
+    left: 90px;
+    top: 150px;
+    animation: mouth 0.3s ease-in-out infinite;
 }
 
 /* cart */
@@ -644,6 +669,7 @@ ul.subs2 p:hover {
     left: 43%;
     z-index: 2;
 }
+
 .logo_dizzy {
     display: none;
     position: absolute;

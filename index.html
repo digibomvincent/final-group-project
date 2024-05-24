@@ -46,7 +46,14 @@
             </ul>
         </div>
         <figure class="logo"><img src="./images/logo.png" alt="" /></figure>
-        <figure class="logo_dizzy"><img src="./images/face/face2.png" alt="" /></figure>
+        <figure class="logo_dizzy">
+            <img class="face_dizzy" src="./images/face/face2.png" alt="" />
+            <div>
+                <img class="eye_l_dizzy" src="./images/face/dizzy.png" alt="" />
+                <img class="eye_r_dizzy" src="./images/face/dizzy.png" alt="" />
+                <img class="mouth_dizzy" src="./images/face/mouth2.png" alt="" />
+            </div>
+        </figure>
     </div>
     <div id="root"></div>
     <!-- react -->
@@ -282,18 +289,13 @@
             const logo_dizzy = document.querySelector('.logo_dizzy');
             let scrollTimeout;
             function changeLogo() {
-                if (window.scrollY > 100) {
-                    logo.style.display = "none";
-                    logo_dizzy.style.display = "block";
-                    clearTimeout(scrollTimeout);
-                    scrollTimeout = setTimeout(() => {
-                        logo.style.display = "block";
-                        logo_dizzy.style.display = "none";
-                    }, 1000);
-                } else {
+                logo.style.display = "none";
+                logo_dizzy.style.display = "block";
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
                     logo.style.display = "block";
                     logo_dizzy.style.display = "none";
-                }
+                }, 700);
             }
             window.addEventListener('scroll', changeLogo);
         });

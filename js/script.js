@@ -15,12 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     iframe.style.height = '500px';
                 }
             });
-            const uls = iframeDocument.querySelectorAll('ul');
-            uls.forEach((ul) => {
+
+
+            const uls = iframeDocument.querySelectorAll('li');
+            uls.forEach((li) => {
                 console.log("subs element found");
-                ul.addEventListener('mouseout', () => {
+                li.addEventListener('mouseout', (e) => {
                     console.log("Mouse out of subs");
+                    console.log(e.clientY)
                     iframe.style.height = '90px';
+                    
                 });
             })
         });
