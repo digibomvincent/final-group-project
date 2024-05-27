@@ -528,7 +528,7 @@ ul.subs li:nth-child(3):after {
 
 /* 上卓 */
 ul.subs li:nth-child(1)::before {
-    background: url(/images/nav/wtop.svg);
+    background: url(./images/nav/wtop.svg);
     opacity: 1;
 }
 
