@@ -528,12 +528,12 @@ ul.subs li:nth-child(3):after {
 
 /* 上卓 */
 ul.subs li:nth-child(1)::before {
-    background: url(./images/nav/wtop.svg);
+    background: url(../images/nav/wtop.svg);
     opacity: 1;
 }
 
 ul.subs li:nth-child(1)::after {
-    background: url(/images/nav/wtop_hover.svg);
+    background: url(../images/nav/wtop_hover.svg);
     opacity: 0;
 }
 
@@ -551,12 +551,12 @@ ul.subs li:nth-child(1):hover {
 
 /* 下卓 */
 ul.subs li:nth-child(2)::before {
-    background: url(/images/nav/wdown.svg);
+    background: url(../images/nav/wdown.svg);
     opacity: 1;
 }
 
 ul.subs li:nth-child(2)::after {
-    background: url(/images/nav/wdown_hover.svg);
+    background: url(../images/nav/wdown_hover.svg);
     opacity: 0;
 }
 
@@ -574,12 +574,12 @@ ul.subs li:nth-child(2):hover {
 
 /* 連身 */
 ul.subs li:nth-child(3)::before {
-    background: url(/images/nav/wbody.svg);
+    background: url(../images/nav/wbody.svg);
     opacity: 1;
 }
 
 ul.subs li:nth-child(3)::after {
-    background: url(/images/nav/wbody_hover.svg);
+    background: url(../images/nav/wbody_hover.svg);
     opacity: 0;
 }
 
@@ -731,7 +731,7 @@ ul.subs2 p:hover {
 }
 
 .product::before {
-    content: url('/images/peka.png');
+    content: url('../images/peka.png');
     position: absolute;
     top: -40px;
     left: -40px;
