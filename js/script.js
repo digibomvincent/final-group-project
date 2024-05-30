@@ -10,23 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
             iframeDocument.addEventListener('mousemove', (e) => {
                 const y = e.clientY;
+                const subsLists = iframeDocument.querySelectorAll('ul.subs');
+                const cartContent = iframeDocument.querySelector('.cart_content');
+
                 if (y <= 90) {
                     console.log("Mouse within 90px from the top");
                     iframe.style.height = '500px';
+                } else {
+                    // Check if all ul.subs elements and div.cart_content have display: none
+                    let allHidden = true;
+                    if (cartContent && getComputedStyle(cartContent).display !== 'none') {
+                        allHidden = false;
+                    }
+                    subsLists.forEach(subsList => {
+                        if (getComputedStyle(subsList).display !== 'none') {
+                            allHidden = false;
+                        }
+                    });
+
+                    if (allHidden) {
+                        iframe.style.height = '90px';
+                    }
                 }
             });
-
-
-            const uls = iframeDocument.querySelectorAll('li');
-            uls.forEach((li) => {
-                console.log("subs element found");
-                li.addEventListener('mouseout', (e) => {
-                    console.log("Mouse out of subs");
-                    console.log(e.clientY)
-                    iframe.style.height = '90px';
-                    
-                });
-            })
         });
     }
 });
