@@ -11,19 +11,8 @@
     <title>PEKABOO</title>
     <link rel="icon" href="/logo.ico">
     <link rel="stylesheet" href="./style/style.css">
-    <script src="./js/jquery-1.11.3.min.js"></script>
-    <script src="./js/jquery.jcarousellite.min.js"></script>
-    <script>
-        $(function () {
-            $('#carousel').jCarouselLite({
-                auto: 3000, //停多久
-                speed: 2000, //移動速度
-                visible: 1,  //顯示幾張
-                scroll: 1    //每次捲動張數
-            });
-        });
-    </script>
-    <script src="./js/script.js"></script>
+
+
 </head>
 
 <body onload="loadNav()">
@@ -171,7 +160,7 @@
 
             return (
                 <article className="product" >
-                    <a className="cloth" href="cloth.html" target="_top">
+                    <a className="cloth" href={`cloth.html?${id}`} target="_top">
                         <img src={`./images/cloth/cl${id}.webp`} alt="" />
                         <img src={`./images/cloth/cl${id}-1.webp`} alt="" />
                         <h2>{name}</h2>
@@ -186,32 +175,9 @@
             )
         }
         const App = () => {
-            /*     const [showCart, setShowCart] = useState(false);
-                const toggleCart = () => {
-                    setShowCart(!showCart);改為相反值 
-                };
-                 Make toggleCart accessible globally
-                window.toggleCart = toggleCart; */
             return (
                 <>
                     <main id="index">
-                        {/*寫到nav裡面了 
-                         {showCart && (
-                            如果 && 前面的表達式為 true，則渲染後面的內容 
-                            <div className='cart_content'>
-                                <h2>共有商品(1)</h2>
-                                <hr />
-                                <div className='box'>
-                                    <img src={`./images/cloth/cl1.webp`} alt="" />
-                                    <div>
-                                        <h2>日系可愛配色胸口刺繡舒適透氣上衣</h2>
-                                        <h2>數量:1</h2>
-                                        <h2>NT.1080</h2>
-                                    </div>
-                                </div>
-                                <div className='cart_view'><a href="">前往購物車</a></div>
-                            </div>
-                        )} */}
                         <section className="sale">
                             <h1 className="title_y">SALE <br />―</h1>
                         </section>
@@ -252,6 +218,8 @@
         <iframe class="footer" src="./footer.html" frameborder="0"></iframe>
     </footer>
     <!-- nav_l -->
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.jcarousellite.min.js"></script>
     <script>
         // window.onload = function () {  /* 問老師 */
         //     var iframe = document.getElementById('nav');
@@ -301,6 +269,17 @@
         });
 
     </script>
+    <script>
+        $(function () {
+            $('#carousel').jCarouselLite({
+                auto: 3000, //停多久
+                speed: 2000, //移動速度
+                visible: 1,  //顯示幾張
+                scroll: 1    //每次捲動張數
+            });
+        });
+    </script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

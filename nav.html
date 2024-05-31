@@ -127,7 +127,7 @@
                 <h2>NT.1080</h2>
             </div>
         </div>
-        <div class='cart_view'><a href="">前往購物車</a></div>
+        <div class='cart_view'><a href="cart.html" target="_blank">前往購物車</a></div>
     </div>
 
 
@@ -141,13 +141,13 @@
             event.preventDefault(); // 防止重新加載
             cartContent.style.display = "block";
         });
-       /*  if (cartContent.style.display = "block") {
-            document.addEventListener('click', function (event) {
-                if (!cartContent.contains(event.target)) {
-                    cartContent.style.display = "none";
-                }
-            });
-        } */
+
+        document.addEventListener('click', function (event) {
+            if (!cartContent.contains(event.target) && !cartIcon.contains(event.target)) {
+                cartContent.style.display = "none";
+            }
+        });
+
 
     });
 </script>
