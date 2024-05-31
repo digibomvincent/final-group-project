@@ -161,8 +161,6 @@ body {
     color: var(--b80);
     /* 全網字體預設 */
     background-color: var(--bg);
-    min-width: 1000px;
-
 }
 
 img {
@@ -667,15 +665,18 @@ a {
 
 /* 購物車進度條 */
 #checkout {
-    display: flex;
-    justify-content: center;
     margin-top: 70px;
-    width: 100%;
 }
-
+.checkout_div {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex: 1;
+}
 #checkout .container {
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 #checkout p {
@@ -693,7 +694,6 @@ a {
     height: 60px;
     border-radius: 50%;
     background-color: #CDCDCD;
-    float: left;
 }
 
 #checkout .circle1 .text {
@@ -720,7 +720,6 @@ a {
     border-radius: 50%;
     background-color: #3A684E;
     align-items: center;
-    margin-left: 201px;
 }
 
 #checkout .circle2 .text {
@@ -731,7 +730,6 @@ a {
     justify-content: center;
     align-items: center;
     padding: 14px 14px;
-    /* margin-top: 10px; */
 }
 
 #checkout .circle2 p {
@@ -747,8 +745,6 @@ a {
     height: 60px;
     border-radius: 50%;
     background-color: #CDCDCD;
-    margin-left: 208px;
-    float: right;
 }
 
 #checkout .circle3 .text {
@@ -769,20 +765,36 @@ a {
     white-space: nowrap;
     text-align: center;
 }
-
+hr {
+    margin-top: 90px;
+}
 /* 資料container */
 .info-container {
     /*  */
-    width: 100%;
+    width: 95%;
     /* max-width: 1320px; */
     margin: 0 auto;
     /* margin-top: 30px;
     display: flex;
     align-items: center; */
 }
-
+.info-container_div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.info-container_div>div{
+    flex: auto;
+}
+.info-container_div .infoCol{
+    margin-bottom: 20px;
+}
+.info-container_div .infoRow{
+    margin-bottom: 0;
+    margin-top: 10px;
+}
 /* 收合購物車 */
-.sum {
+/* .sum {
     border: 1px solid #ccc;
     margin: 0 10px;
     display: flex;
@@ -802,7 +814,7 @@ a {
     height: 16px;
     width: 16px;
   
-}
+} */
 
 /*資料填寫 */
 .infoRow {
@@ -811,18 +823,20 @@ a {
     justify-content: space-between;
     margin-bottom: 20px;
     margin-top: 40px;
-
+    flex-wrap: wrap;
 }
-
+.infoRow.reverse{
+    flex-wrap: wrap-reverse;
+}
 .infoCol {
     /* margin-right: 20px; */
-    border: 1px solid #ccc;
+    border: 1px solid #666;
     width: 100%;
     margin: 0 10px;
 
 }
 
-.infoCol h4 {
+.infoCol p {
     background-color: #bad2a7;
     /* padding-top: 5px;
    padding-bottom: 5px; */
@@ -862,49 +876,86 @@ a {
     width: 24px;
 }
 .submitRow {
-    display: flex;
-    /* 平均分，靠兩邊 */
-    justify-content: space-between;
+
     margin-bottom: 20px;
     margin-top: 40px;
 }
 .submitAgree{
+    display: flex;
+    align-items: end;
      /* margin-right: 20px; */
-     border: 1px solid #ccc;
-     width: 100%;
+     border: 1px solid #666;
      margin: 0 10px;
 }
-.submitAgree h4 {
-   
-    /* padding-top: 5px;
-   padding-bottom: 5px; */
-    line-height: 30px;
-    text-align: right;
-    border-bottom: none;
-    margin-left: 600px;
-    margin-right: 190px;
-    padding-top: 20px;
+.submitBack{
     padding-bottom: 10px;
+}
+.submitBack:hover{
+    cursor: pointer;
+}
+.submitAgree>div{
+    flex: 1;
+}
+.submitAgree p{
+    line-height: 30px;
+    text-align: left;
+    border-bottom: none;
+    padding: 20px 0px 10px 11px;
 }
 .submitContent{
     flex: 1;
     text-align: right;
+    padding: 10px;
 }
 .submitContent button {
     background-color: #3A684E;
     color: #ffffff;
     border: none;
-    width: 45%;
+    width: 100%;
     height: 50px;
     font-size: 16px;
- margin: 10px 20px 0px 20px;
    text-align:center;
-  
- 
 }
-.submitContent span:hover{
+.submitContent button:hover{
     cursor: pointer;
 }
-.submitContent button:hover {
-    cursor: pointer;
+@media(min-width:576px){
+    .container{
+      max-width: 540px;
+    }
+}
+
+
+@media(min-width:768px) {
+    .container{
+        max-width:720px;
+    }
+    .info-container_div{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .info-container_div .infoCol{
+        margin-bottom: 0px;
+    }
+    .info-container_div .infoRow{
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+    .infoRow,.infoRow.reverse {
+        flex-wrap: nowrap;
+    }
+
+    
+}
+@media(min-width:992px){
+    .container{
+        max-width:960px;
+    }
+}
+
+@media(min-width:1200px){
+    .container{
+        max-width:1140px;
+    }
 }
