@@ -1319,6 +1319,7 @@ ul.subs2 p:hover {
 
 .onestyle_pic1>img {
     width: 35vw;
+    min-width: 330px;
     object-fit: cover;
 }
 
@@ -1330,6 +1331,12 @@ ul.subs2 p:hover {
 
 .onestyle_pic2 {
     display: flex;
+    flex-direction: row;
+    float: left;
+}
+.onestyle_pic2>*{
+    margin-top: 10px;
+    margin-right: 5px;
 }
 
 .onestyle_content {
