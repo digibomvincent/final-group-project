@@ -25,7 +25,7 @@
         <main id="react-container"></main>
     </main>
     <script type="text/babel">
-        // 定义组件
+        // 定義component
         class App extends React.Component {
             constructor(props) {
                 super(props);
@@ -34,23 +34,23 @@
                 };
             }
 
-            // 处理页面切换
+            // 頁面切換
             handlePageChange(page) {
                 this.setState({ currentPage: page });
             }
 
             render() {
                 return (
-                    <div>
-                        <div className="logo">
-                        </div>
+                    <div class="spa">
+                        {/*<div className="logo">
+                        </div>*/}
                         <div className="menu">
-                            {/* 分页按钮 */}
+                            {/* 分頁按紐 */}
                             <button onClick={() => this.handlePageChange('member')}>會員資訊</button>
                             <button onClick={() => this.handlePageChange('cashback')}>回饋金</button>
                             <button onClick={() => this.handlePageChange('order')}>訂單</button>
                         </div>
-                        {/* 显示当前页面内容 */}
+                        {/* 顯示點選的頁面內容 */}
                         <div className="content">
                             {this.renderPage()}
                         </div>
@@ -58,7 +58,7 @@
                 );
             }
 
-            // 根据当前页面状态渲染不同的页面内容
+            // 根據當下狀態選取不同內容
             renderPage() {
                 const { currentPage } = this.state;
                 switch (currentPage) {
@@ -70,19 +70,19 @@
                                 <div className="memberInfo">
                                     <img src="./images/icon/logo-01-weed.svg" alt="" className="menuLogo" />
                                     <p>andy19278</p>
-                                    <p className="memberState">一般會員</p>
+                                    <label className="memberState">一般會員</label>
                                 </div>
                                 <div className="form">
                                     <div className="section-title">
-                                        <p>編輯會員資料</p>
+                                        <label>編輯會員資料</label>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group">
-                                            <p>暱稱</p>
+                                            <label>暱稱</label>
                                             <input type="text" id="inputForm1" />
                                         </div>
                                         <div className="form-group">
-                                            <p>連絡電話(選填)</p>
+                                            <label>連絡電話(選填)</label>
                                             <div className="phone-input">
                                                 <select>
                                                     <option>TW+886</option>
@@ -98,11 +98,11 @@
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group">
-                                            <p>電郵</p>
+                                            <label>電郵</label>
                                             <input type="text" id="inputForm2" />
                                         </div>
                                         <div className="form-group">
-                                            <p>密碼</p>
+                                            <label>密碼</label>
                                             <div>
                                                 <a href="#" className="black">設定新密碼</a>
                                             </div>
@@ -113,7 +113,7 @@
                                             <div className="mailBtn"><a href="#">發送驗證信</a></div>
                                         </div>
                                         <div className="form-group">
-                                            <p>信用卡</p>
+                                            <label>信用卡</label>
                                             <div>
                                                 <a href="#" className="black">新增信用卡</a>
                                             </div>
@@ -143,10 +143,10 @@
                                     <div className="memberInfo">
                                         <img src="./images/icon/logo-01-weed.svg" alt="" className="menuLogo" />
                                         <p>andy19278</p>
-                                        <p className="memberState">一般會員</p>
+                                        <span className="memberState">一般會員</span> {/* 使用 span 或 p */}
                                     </div>
                                     <div className="form">
-                                        <p className="form">目前回饋金為ooo</p>
+                                        <p>目前回饋金為ooo</p>
                                     </div></div></div>
                         );
                     case 'order':
@@ -158,16 +158,16 @@
                                     <div className="memberInfo">
                                         <img src="./images/icon/logo-01-weed.svg" alt="" className="menuLogo" />
                                         <p>andy19278</p>
-                                        <p className="memberState">一般會員</p>
+                                        <span className="memberState">一般會員</span>
                                     </div>
                                     <div className="form">
-                                    <p className="form">你的訂單是20250515001</p>
+                                    <p>你的訂單是20250515001</p>
                                 </div>
                                     <div class="timeline">
                                         <div class="box_moveForward">
                                             <img class="deliveryLogo" src="./images/logo.png" alt=""/>
                                         </div>
-                                        <hr size="5" color="#3A684E" width="1000px"/>
+                                        <hr size="5"/>
                                             <div class="deliveryStatus">
                                                 <div class="orderCompleted">
                                                     訂單成立
@@ -202,7 +202,6 @@
             }
         }
 
-        // 渲染组件到页面
         ReactDOM.render(
             <App />,
             document.getElementById('react-container')
