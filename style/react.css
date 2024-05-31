@@ -9,20 +9,44 @@
     --b80: #343434;
 }
 
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-p {
-    font-size: 16pt;
+label {
+    font-size: 1rem;
+    width: 7rem;
+    height: 4.125rem;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    margin: 0;
+    /* max-width: 1200px;
+    min-width: 860px;
+    max-height: 564px;
+    min-height: 385.4px; */
+    width: 83vw;
+    height:51.6vh;
+}
+
+.container {
+    background-color: transparent;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
 }
 
 .menu {
     background-color: #333;
     color: #ffffff;
     text-align: center;
-    width: 1200px;
+    width: 100%;
     height: 52px;
     display: flex;
     margin: 0;
@@ -39,32 +63,35 @@ p {
     color: var(--b80);
     border: 0.5px solid #DBDCD7;
     cursor: pointer;
-    width: 400px;
-    height: 52px;
+    width: 33.33%;
+    height: 3.25rem;
     margin: 0;
     padding: 0;
+    transition: background-color 0.5s, border-top 0.5s, font-weight 0.5s;
 }
 
 .menu button:hover {
+    transition: .5s;
+}
+
+.menu button:hover,
+.menu button:focus {
     background-color: #f9faf5;
     border-bottom: none;
     border-top: 2px solid var(--green);
     font-weight: bold;
-    transition: .5s;
 }
+
 
 .form p {
     font-size: 1rem;
 }
 
-.content {
-    width: 1200px;
-    height: 564px;
-    background-color: #f9faf5;
-    margin: 0;
+.memberInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
 }
-
-
 .memberInfo {
     display: flex;
     align-items: center;
@@ -75,7 +102,7 @@ p {
     margin-right: 0.5rem;
 }
 
-.memberInfo p {
+.memberInfo input {
     margin-right: 0.5rem;
 }
 
@@ -89,23 +116,25 @@ p {
     flex-wrap: nowrap;
     margin-bottom: 20px;
     margin-left: 20px;
+    max-width: 75rem;
 }
 
 .form-group {
     display: flex;
-    margin-right: 6.25rem;
+    margin-right: 1rem;
     align-items: center;
     margin-bottom: 1.5rem;
+    width: 50%;
 }
 
 .form-group-2 {
     display: flex;
-
 }
 
-.form-group p {
+.form-group input {
     margin-right: 2rem;
-    ;
+    word-wrap: break-all;
+    white-space: normal;
 }
 
 .form-group-2 {
@@ -121,6 +150,7 @@ p {
 
 .black {
     color: #343434;
+    /* align-self: center; */
 }
 
 .form-group-2 a {
@@ -135,18 +165,14 @@ p {
     display: flex;
 }
 
-/* .phone-input select,
-.phone-input input {
-  margin-right: 10px;
-} */
-
 .justify-content-end {
+    display: flex;
     justify-content: flex-end;
 }
 
 #cancelBtn {
-    width: 155px;
-    height: 44px;
+    width: 6.1875rem;
+    height: 2.75rem;
     color: #000000;
     background-color: #f9faf5;
     border: 0.5px solid #000000;
@@ -160,10 +186,14 @@ p {
     background-color: var(--green);
     color: var(--bg);
     border-radius: 99px;
+    width: 7.375rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: inline-block;
 }
 
 #saveBtn {
-    width: 139px;
+    width: 9.6875rem;
     height: 44px;
     color: var(--bg);
     background-color: var(--green);
@@ -172,8 +202,12 @@ p {
     font-size: 1.25rem;
 }
 
+#saveBtn a {
+    color: var(--bg);
+}
+
 .mailBtn {
-    width: 23.87rem;
+    width: 60%;
     height: 2.5rem;
     color: #ffffff;
     background-color: var(--green);
@@ -183,17 +217,13 @@ p {
     margin-left: 4rem;
 }
 
-#inputForm1 {
-    width: 23.87rem;
-    height: 2.5rem;
-    background-color: transparent;
-    border: 1px solid var(--b20);
-    color: var(--b80);
-    font-size: 16pt;
+.mailBtn a {
+    color: var(--bg);
 }
 
+#inputForm1,
 #inputForm2 {
-    width: 23.87rem;
+    width: 60%;
     height: 2.5rem;
     background-color: transparent;
     border: 1px solid var(--b20);
@@ -203,7 +233,7 @@ p {
 
 #inputForm3 {
     margin: 0;
-    width: 31.83vh;
+    width: 47%;
     height: 40px;
     background-color: transparent;
     border: 1px solid var(--b20);
@@ -215,40 +245,30 @@ select {
     background: transparent;
     border: 1px solid var(--b20);
     margin: 0;
-    width: 6.3125rem;
+    width: 30%;
     height: 2.5rem;
     box-sizing: border-box;
     font-size: 14pt;
     color: #000000;
 }
 
-.container {
-    width: 1200px;
-    height: 564px;
-    background-color: transparent;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
 ul {
     list-style: none;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 /* 動畫 */
 
 .box_moveForward img {
     margin-top: 50px;
-    margin-left: 55px;
+    margin-left: 3.82vw;
     width: 80px;
     height: 80px;
-
 }
 
 .timeline {
     position: relative;
-    width: 1000px;
+    width: 69.44vw;
 }
 
 .deliveryStatus {
@@ -258,7 +278,7 @@ ul {
 }
 
 .deliveryStatus div {
-    margin: 70px 0 0 0;
+    margin: 4.86vw 0 0 0;
     flex: 1;
 
 
@@ -270,8 +290,8 @@ ul {
 }
 
 .deliveryLogo {
-    width: 1000px;
-    height: 80px;
+    width: 6.67%;
+    height: 6.67%;
     position: relative;
     animation-name: deliveryLogo;
     animation-duration: 6s;
@@ -292,7 +312,7 @@ ul {
     width: 100%;
     z-index: 2;
     position: absolute;
-    top: 134px;
+    top: 125px;
 }
 
 .dot img {
@@ -304,34 +324,177 @@ ul {
 hr {
     position: relative;
     z-index: 1;
+    width: 69.44vw;
+    border: 2px solid #3A684E;
 }
-
-
 
 
 @keyframes deliveryLogo {
     0% {
-        left: 0px;
+        left: 0vw;
         top: 40px;
     }
 
     25% {
-        left: 196px;
+        left: 13.61vw;
         top: 40px;
     }
 
     50% {
-        left: 400px;
+        left: 27.78vw;
         top: 40px;
     }
 
     75% {
-        left: 600px;
+        left: 43vw;
         top: 40px;
     }
 
     100% {
-        left: 800px;
+        left: 57vw;
         top: 40px;
+    }
+}
+
+/* rwd斷點
+/* 桌機板 */
+@media(min-width:821px) {}
+
+/* 平板 */
+@media(max-width: 820px) {
+    #react-container {
+        max-width: 95.12%;
+    }
+
+    .spa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .menu,
+    .container {
+        width: 100%;
+    }
+
+    .timeline,
+    hr {
+        width: 100%;
+        ;
+    }
+
+    .form {
+        flex: 1;
+    }
+    /* label {
+        font-size: 1rem;
+        width: 7rem;
+        height: 4.125rem;
+        display: flex;
+        align-items: center;
+    } */
+    #inputForm1,
+    #inputForm2{
+        width: 100%;
+    }
+    .mailBtn{
+        width: 55%;
+        margin-left: 35%;
+    }
+
+    #inputForm3 {
+        width: 100%;
+    }
+
+    select {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    form p {
+        font-size: 0.8rem;
+    }
+
+    #cancelBtn {
+        width: 100%;
+    }
+
+    #saveBtn {
+        width: 100%;
+    }
+}
+
+/* 手機板 */
+@media (max-width: 640px) {
+    #react-container {
+        max-width: 95.12%;
+    }
+
+    .menu,
+    .container {
+        width: 100%;
+    }
+
+    .timeline,
+    hr {
+        width: 72.22vw;
+    }
+
+    .box_moveForward img {
+        margin-left: 0;
+    }
+
+    .deliveryLogo {
+        width: 2%;
+        height: 2%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        align-items: center;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .justify-content-end {
+        flex-direction: row;
+    }
+
+    #inputForm1,
+    #inputForm2,
+    .mailBtn {
+        width: 100%;
+    }
+
+    option {
+        font-size: 0.8rem;
+    }
+
+    .phone-input select {
+        width: 30%;
+    }
+
+    #inputForm3 {
+        width: 55%;
+    }
+
+    .form-group-2 {
+        display: flex;
+    }
+    .mailBtn{
+        width: 65%;
+        margin-left: 25%;
+    }
+    #cancelBtn {
+        width: 100%;
+    }
+
+    #saveBtn {
+        width: 100%;
     }
 }
