@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style_c3.css">
 </head>
 
@@ -15,36 +17,40 @@
     <!-- 購物車進度條 -->
     <div id="checkout">
         <div class="container">
-            <div class="circle1">
-                <span class="text">1</span>
-                <p>購物車</p>
-            </div>
+            <div class="checkout_div">
+                <div class="circle1">
+                    <span class="text">1</span>
+                    <p>購物車</p>
+                </div>
 
-            <div class="circle2">
-                <span class="text">2</span>
-                <p>填寫資料</p>
-            </div>
+                <div class="circle2">
+                    <span class="text">2</span>
+                    <p>填寫資料</p>
+                </div>
 
-            <div class="circle3">
-                <span class="text">3</span>
-                <p>訂單確認</p>
+                <div class="circle3">
+                    <span class="text">3</span>
+                    <p>訂單確認</p>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="complete">
-        <h2>
+    <hr style="color: #ccc;">
+    <!-- <div class="complete">
+        <p>
             <a href="#" style="display:inline-block; vertical-align: middle;"><img src="./images/icon/checkmark.svg"
                     alt=""></a>
             <span>
-                訂購完成
+                成功付款NT.3030
                 <br>
                 <br>
                 您已經完成本筆交易的訂購程序，感謝您的訂購。
             </span>
-        </h2>
-    </div>
+        </p>
+    </div> -->
+
     <div class="container">
+
         <div class="bestellung">
             <table>
                 <!-- 訂單資訊  -->
@@ -71,73 +77,166 @@
                         付款方式：信用卡
                     </td>
                 </tr>
-                <tr>
+                <tr class="line">
                     <td>
                         送貨方式：超商取貨
                     </td>
                 </tr>
                 <tr>
                     <td>
+                        <span style="color: blue;"><img src="./images/icon/edit-info.svg">修改付款資料</span>
+                     </td>
+                </tr>
+                <tr>
+                    <td>
                         <span>查看訂單商品</span>
-                        <a href="#" style="display:inline-block; vertical-align: middle;"><img
-                                src="./images/icon/Expand_down_light.svg" alt=""></a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <!-- 訂單狀態 -->
-        <div class="orderStatus">
-            <table>
-                <tr>
-                    <th colspan="2">訂單狀態</th>
-                </tr>
-                <tr>
-                    <td colspan="2">
+                        <a id="down_icon" style="display:inline-block; vertical-align: middle;"
+                            data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                            aria-controls="collapseExample">
+                            <img src="./images/icon/Expand_down_light.svg" alt="">
+                        </a>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body ps-0 pe-3">
+                                <div class="cart">
+                                    <table class="cart_table">
+                                        <tr>
+                                            <td colspan="2">商品資料</td>
+                                            <td class="text-center">單件<span class="inline-block">價格</span></td>
+                                            <td class="text-center">數量</td>
+                                            <td class="text-center">小計</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-cell="商品資料" colspan="2">
+                                                <div class="cart_div">
+                                                    <div class="cart_div_img">
+                                                        <img src="./images/cl1-1.webp" alt="product">
+                                                    </div>
+                                                    <div class="cart_div_text">
+                                                        <p>日系可愛配色胸口刺繡舒適透氣上衣</p>
+                                                        <p>BLACK</p>
+                                                        <p>S</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center" data-cell="單件價格">NT.990</td>
 
-                        <div class="timeline">
-                            <div class="box_moveForward">
-                                <img class="deliveryLogo" src="./images/logo.png" alt="">
-                            </div>
+                                            <td class="text-center" data-cell="數量">
+                                                <div class="count">
 
-                            <hr size="5" color="#3A684E" width="1000px">
-                            <div class="deliveryStatus">
-                                <div class="orderCompleted">
-                                    訂單成立
+                                                    <p class="border-0 bg-transparent" type="text" id="quantity2">2件</p>
+
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center" data-cell="小計">NT.1980</td>
+                                            <td class="x pe-2 delect" data-cell="小計"></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-cell="商品資料" colspan="2">
+                                                <div class="cart_div">
+                                                    <div class="cart_div_img">
+                                                        <img src="./images/cl1.webp" alt="product">
+                                                    </div>
+                                                    <div class="cart_div_text">
+                                                        <p>日系可愛配色胸口刺繡舒適透氣上衣</p>
+                                                        <p>BLUE</p>
+                                                        <p>S</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center" data-cell="單件價格">NT.990</td>
+                                            <td class="text-center" data-cell="數量">
+                                                <div class="count">
+
+                                                    <p class="border-0 bg-transparent" type="text" id="quantity2">1件</p>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center" data-cell="小計">NT.990</td>
+                                            <td class="x pe-2 delect" data-cell="小計"></td>
+                                        </tr>
+                                    </table>
+                                    <div class="cart_table--sm">
+                                        <div class="item ">
+                                            <div class="item_div">
+                                                <span><img src="./images/cl1-1.webp" alt="product"></span>
+                                                <div class="item_div_text">
+                                                    <div class="item_div_text_div">
+                                                        <p>日系可愛配色胸口刺繡舒適透氣上衣</p>
+                                                        <p>BLACK</p>
+                                                        <p>S</p>
+                                                    </div>
+
+                                                </div>
+                                                <span></span>
+                                            </div>
+                                            <div class="item_price">
+                                                <p>NT.990</p>
+                                            </div>
+                                            <div class="item_total">
+                                                <div class="count">
+
+                                                    <p class="border-0 bg-transparent" type="text" id="quantity2">2件</p>
+
+                                                </div>
+                                                <div class="item_total_price">NT.1980</div>
+                                            </div>
+                                        </div>
+                                        <div class="item ">
+                                            <div class="item_div">
+                                                <span><img src="/images/cl1.webp" alt="product"></span>
+                                                <div class="item_div_text">
+                                                    <div class="item_div_text_div">
+                                                        <p>日系可愛配色胸口刺繡舒適透氣上衣</p>
+                                                        <p>BLUE</p>
+                                                        <p>S</p>
+                                                    </div>
+
+                                                </div>
+                                                <span></span>
+                                            </div>
+                                            <div class="item_price">
+                                                <p>NT.990</p>
+                                            </div>
+                                            <div class="item_total">
+                                                <div class="count">
+
+                                                    <p class="border-0 bg-transparent" type="text" id="quantity2">1件</p>
+
+                                                </div>
+                                                <div class="item_total_price">NT.990</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="send">
-                                    商品已出貨
-                                </div>
-                                <div class="delivering">
-                                    配送中
-                                </div>
-                                <div class="arrived">
-                                    已送達
-                                </div>
-                                <div class="pickup">
-                                    買家已取件
-                                </div>
-                            </div>
-                            <div class="dot">
-                                <div><img src="./images/icon/dot.svg" alt=""></div>
-                                <div><img src="./images/icon/dot.svg" alt=""></div>
-                                <div><img src="./images/icon/dot.svg" alt=""></div>
-                                <div><img src="./images/icon/dot.svg" alt=""></div>
-                                <div><img src="./images/icon/dot.svg" alt=""></div>
                             </div>
                         </div>
-
-
-
                     </td>
                 </tr>
             </table>
         </div>
+     
+            <div class="okPay">
+                <button type="button">確認付款</button>
+            </div>
+     
     </div>
 
     <footer>
         <iframe class="footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        var checkmark = document.getElementById('collapseExample');
+        var down_icon = document.getElementById('down_icon');
+        down_icon.addEventListener('click', function () {
+            down_icon.classList.toggle('icon_reverse');
+        })
 
+    </script>
 </body>
 
 </html>
