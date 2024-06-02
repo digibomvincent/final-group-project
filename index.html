@@ -15,7 +15,7 @@
 
 </head>
 
-<body onload="loadNav()">
+<body id="index" onload="loadNav()">
 
     <header>
         <div class="index_top " id="index_top">
@@ -43,6 +43,9 @@
                 <img class="mouth_dizzy" src="./images/face/mouth2.png" alt="" />
             </div>
         </figure>
+    </div>
+    <div class="bg_box rellax" data-rellax-speed="-5">
+        <div class="bg"></div>
     </div>
     <!-- react -->
     <div id="root"></div>
@@ -172,6 +175,16 @@
                 scroll: 1    //每次捲動張數
             });
         });
+    </script>
+    <script src="./js/parallax.min.js"></script>
+    <script>
+        /* var scene = document.getElementById('bg');
+        var parallaxInstance = new Parallax(scene); */
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script>
+        // Accepts any class name
+        var rellax = new Rellax('.rellax');
     </script>
     <script src="./js/script.js"></script>
 </body>

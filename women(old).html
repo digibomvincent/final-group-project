@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <!-- <div>
+        <figure class="face1_box">
+            <img class="face1" src="./images/logo.png" alt="">
+        </figure>
+        <figure class="face2_box">
+            <img class="face2" src="./images/face/face.png" alt="">
+            <img class="eye_l" src="./images/face/eye.png" alt="">
+            <img class="eye_r" src="./images/face/eye.png" alt="">
+            <img class="mouth" src="./images/face/mouth.png" alt="">
+        </figure>
+    </div> -->
+
+    <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    <div class="iframe_blank"></div>
+    <main id="women">
+        <section class="category">
+            <h2>所有商品 / 女裝 / 上著 / 短袖T恤</h2>
+            <h1>短袖T恤</h1>
+            <div>
+                <ul class="page">
+                    <h3>379</h3>
+                    <h3>ITEMS</h3>
+                    <li><a href="#">&lt;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
+                </ul>
+                <form action="">
+                    <!-- 下拉選單 comcobox -->
+                    <select name="" class="filter">
+                        <option value="價格由低到高">價格由低到高</option>
+                        <option value="價格由高到低">價格由高到低</option>
+                        <option value="熱門商品">熱門商品</option>
+                        <option value="最新商品">最新商品</option>
+                    </select>
+                </form>
+            </div>
+
+        </section>
+    </main>
+    <div id="root"></div>
+    <!-- react -->
+    <script type="text/babel">
+        const cloth = ['1', '2', '3', '4', '5', '6']
+        console.log(cloth)
+        const { useState } = React
+        const App = () => {
+            const [isHovered, setIsHovered] = useState(false);
+            const [num, setNum] = useState(0);
+            const handleMouseOver = () => {
+                setIsHovered(true);
+            };
+            const handleMouseOut = () => {
+                setIsHovered(false);
+            };
+            const handleNum = () => {
+                setNum(num + 1);
+            };
+
+            return (
+                <>
+                    <div className='cart_num'>{num}</div>
+                    <div >
+                        <figure id='face1_box' className="face1_box" style={{ display: isHovered || num > 0 ? 'none' : 'block' }}>
+                            <img className="face1" src="./images/logo.png" alt="" />
+                        </figure>
+                        <figure className="face2_box" style={{ display: isHovered || num > 0 ? 'block' : 'none' }}>
+                            <img className="face2" src="./images/face/face.png" alt="" />
+                            <img className="eye_l" src="./images/face/eye.png" alt="" />
+                            <img className="eye_r" src="./images/face/eye.png" alt="" />
+                            <img className="pupil_l" src="./images/face/weed_w.png" alt="" />
+                            <img className="pupil_r" src="./images/face/weed_w.png" alt="" />
+                            <img className="mouth" src="./images/face/mouth.png" alt="" />
+                        </figure>
+                    </div>
+
+                    <section className='sale_content'>
+                        {cloth.map((p) => {
+                            return (
+                                <article className="product" key={p.cloth}>
+                                    <a className="cloth" href="cloth.html" target="_top">
+                                        <img src="./images/cloth/cl1.webp" alt="" />
+                                        <h2>日系可愛配色胸口刺繡舒適透氣上衣（100%棉）</h2>
+                                    </a>
+                                    <h2 className="tag">短袖</h2>
+                                    <div className="price">
+                                        <h2>NT.</h2>
+                                        <h3>1,080</h3>
+                                    </div>
+                                    <button
+                                        className="addcart"
+                                        onMouseOver={handleMouseOver}
+                                        onMouseOut={handleMouseOut}
+                                        onClick={handleNum}><img src="./images/icon/addcart.png" alt="" />
+                                    </button>
+                                </article>
+                            )
+                        })}
+                    </section>
+                </>
+            )
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+    <!-- react -->
+    <section class="category">
+        <div>
+            <ul class="page">
+                <h3>379</h3>
+                <h3>ITEMS</h3>
+                <li><a href="#">&lt;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+            </ul>
+            <form action="">
+                <!-- 下拉選單 comcobox -->
+                <select name="" class="filter">
+                    <option value="價格由低到高">價格由低到高</option>
+                    <option value="價格由高到低">價格由高到低</option>
+                    <option value="熱門商品">熱門商品</option>
+                    <option value="最新商品">最新商品</option>
+                </select>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="footer_top">
+            <figure class="text_y"><img src="./images/text_y.png" alt=""></figure>
+            <div class="contact">
+                <a href="#"><img src="./images/icon/Line.png" alt=""></a>
+                <a href="#"><img src="./images/icon/Instagram.png" alt=""></a>
+                <a href="#"><img src="./images/icon/Facebook.png" alt=""></a>
+                <small>TEL：03-5333-0802
+                    <br>MAIL：okayama-accent-tshirt@gmail.com
+                </small>
+            </div>
+        </div>
+        <div class="footer_buttom">
+            <ul class="nav_buttom">
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">限時特賣</a></li>
+                <li><a href="#">所有商品</a></li>
+                <li><a href="#">會員中心</a></li>
+                <li><a href="#">購物車</a></li>
+                <small>Copyright &copy; 2024 PEKABOO All Rights Reserved.</small>
+            </ul>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
