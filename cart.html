@@ -6,11 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style/style_c1.css">
+    <script src="./js/script.js"></script>
+    <style>
+        .nav {
+    width: 100%;
+    height: 60px;
+    /* iframe有預設高*/
+    position: fixed;
+    z-index: 3;
+}
+    </style>
 </head>
 
 <body>
     <header>
         <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+        <div class="iframe_blank"></div>
     </header>
     <!-- 購物車進度條 -->
     <div id="checkout">
@@ -156,7 +167,7 @@
             </div>
         </div>
         <div class="cart_method" style="display: flex;">
-            <!-- <div class="row"></div> -->
+     
             <div class="cart_method_pay">
                 <table>
                     <!-- 選擇送貨及付款方式  -->
@@ -240,11 +251,11 @@
                         <td class="text-end">NT.3030</td>
                     </tr>
                     <tr class="line text-center">
-                        <td colspan="2"><button type="button">前往結帳</button></td>
+                        <td colspan="2"><button type="button"><a href="customer.html">前往結帳</a></button></td>
                     </tr>
                 </table>
             </div>
-            <!-- </div> -->
+        
         </div>
     </div>
     <footer>

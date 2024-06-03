@@ -6,11 +6,22 @@
     <meta name="viewport" info="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style/style_c2.css">
+    <script src="./js/script.js"></script>
+    <style>
+        .nav {
+    width: 100%;
+    height: 60px;
+    /* iframe有預設高*/
+    position: fixed;
+    z-index: 3;
+}
+    </style>
 </head>
 
 <body>
     <header>
         <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+        <div class="iframe_blank"></div>
     </header>
     <!-- 購物車進度條 -->
     <div id="checkout">
@@ -205,7 +216,7 @@
                     <p>提交訂單表示我同意PEKABOO的<span style="color: blue;">服務條款</span>,<span
                             style="color: blue;">防詐騙宣導</span>和<span style="color: blue;">隱私政策</span>。</p>
                     <div class="submitContent">
-                        <button type="button">提交訂單</button>
+                        <button type="button"><a href="confirm.html">提交訂單</a></button>
                     </div>
                 </div>
 
