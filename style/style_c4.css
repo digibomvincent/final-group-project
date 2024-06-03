@@ -383,10 +383,11 @@ a {
 }
 
 /* footer */
-.footer{
+.footer {
     width: 100%;
     height: 295px;
 }
+
 .footer_top {
     display: flex;
     flex-direction: column;
@@ -664,49 +665,28 @@ a {
     transition: transform 1s ease;
     transform: translateX(-232.5px);
 }
+
 .complete {
     border: 1px solid #ccc;
     margin: 0 10px;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     margin-top: 60px;
 }
+
 .complete p {
     flex: 1;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.complete img{
+
+.complete img {
     display: inline-block;
     vertical-align: middle;
     height: 16px;
     width: 16px;
-}
-.clickBtn{
-    display: flex;
-    justify-self: start;
-}
-.bkhome button{
-    background-color: #3A684E;
-    color: #ffffff;
-    width: 100px;
-    height: 50px;
-    align-items: right;
-    justify-content: center;
-    /* width: 200px;
-    border: 3px solid #3A684E; */
-margin-left: 30px;
-}
-
-.bkHome:hover{
-    cursor: pointer;
-}
-.hotSale{
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
 }
 .title_y {
     font-size: 3rem;
@@ -716,7 +696,9 @@ margin-left: 30px;
     -webkit-text-stroke: 1.5px var(--green);
     text-shadow: var(--green) -2px 2px;
     line-height: 60%;
+    margin-bottom: 20px;
 }
+
 .product {
     width: 230px;
     height: 345px;
@@ -724,9 +706,9 @@ margin-left: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 20px;
-    float: left;
+    margin: 0 auto;
 }
+
 .product::before {
     content: url('/images/peka.png');
     position: absolute;
@@ -740,6 +722,7 @@ margin-left: 30px;
     transition: transform 1s ease;
     /* 添加渐进动画 */
 }
+
 .product:hover::before {
     transform: rotate(0deg);
 }
@@ -793,12 +776,39 @@ margin-left: 30px;
     font-weight: bold;
 }
 
+.clickBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0 40px 0;
+}
 
-
-
-
-
-
-
-
-
+.bkhome button {
+    background-color: #3A684E;
+    color: #ffffff;
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 53px;
+    border-radius: 5px;
+}
+.bkhome button:hover{
+    background-color: var(--yellow);
+    color: var(--green);
+}
+.pcorder button{
+    background-color:var(--bg);
+    color:var(--green);
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 53px;
+    border-radius: 5px;
+} 
+.pcorder button:hover{
+    background-color: #FFDD50;
+}

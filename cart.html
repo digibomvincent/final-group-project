@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style_c1.css">
+    <script src="./js/script.js"></script>
+    <style>
+        .nav {
+            width: 100%;
+            height: 60px;
+            /* iframe有預設高*/
+            position: fixed;
+            z-index: 3;
+        }
+        .iframe_blank{
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    <div class="iframe_blank"></div>
+
+    <!-- 購物車進度條 -->
+    <div id="checkout">
+        <div class="container">
+            <div class="checkout_div">
+                <div class="circle1">
+                    <span class="text">1</span>
+                    <p>購物車</p>
+                </div>
+
+                <div class="circle2">
+                    <span class="text">2</span>
+                    <p>填寫資料</p>
+                </div>
+
+                <div class="circle3">
+                    <span class="text">3</span>
+                    <p>訂單確認</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 購物車件數 -->
+    <!-- <div id="einkaufswagen"> -->
+    <hr style="color: #ccc;">
+    <div class="container">
+
+        <div class="cart">
+            <table class="cart_table">
+                <tr>
+                    <th colspan="6">購物車</th>
+                </tr>
+                <tr>
+                    <td colspan="2">商品資料</td>
+                    <td class="text-center">單件<span class="inline-block">價格</span></td>
+                    <td class="text-center">數量</td>
+                    <td class="text-center">小計</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td data-cell="商品資料" colspan="2">
+                        <div class="cart_div">
+                            <div class="cart_div_img">
+                                <img src="./images/cloth/cl1-1.webp" alt="product">
+                            </div>
+                            <div class="cart_div_text">
+                                <p>日系可愛配色胸口刺繡舒適透氣上衣</p>
+                                <p>BLACK</p>
+                                <p>S</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td id="unitPrice1" class="text-center" data-cell="單件價格">NT.990</td>
+
+                    <td class="text-center" data-cell="數量">
+                        <div class="count">
+                            <button onclick="decrement(quantityInput1)">-</button>
+                            <input type="text" id="quantity1" value="1">
+                            <button onclick="increment(quantityInput1)">+</button>
+                        </div>
+                    </td>
+
+                    <td id="subtotal1" class="text-center" data-cell="小計">NT.1980</td>
+                    <td class="x" data-cell="小計"><img class="del" src="./images/icon/x.svg" alt="delete"></td>
+                </tr>
+                <tr>
+                    <td data-cell="商品資料" colspan="2">
+                        <div class="cart_div">
+                            <div class="cart_div_img">
+                                <img src="./images/cloth/cl1.webp" alt="product">
+                            </div>
+                            <div class="cart_div_text">
+                                <p>日系可愛配色胸口刺繡舒適透氣上衣</p>
+                                <p>BLUE</p>
+                                <p>S</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="text-center">NT.990</td>
+                    <td class="text-center" data-cell="數量">
+                        <div class="count">
+                            <button onclick="decrement(quantityInput2)">-</button>
+                            <input type="text" id="quantity2" value="1">
+                            <button onclick="increment(quantityInput2)">+</button>
+                        </div>
+                    </td>
+                    <td id="subtotal2" class="text-center" data-cell="小計">NT.990</td>
+                    <td class="x"><img class="del" src="./images/icon/x.svg" alt="delete"></td>
+                </tr>
+            </table>
+            <div class="cart_table--sm">
+                <div class="item ">
+                    <div class="item_div">
+                        <span><img src="./images/cloth/cl1-1.webp" alt="product"></span>
+                        <div class="item_div_text">
+                            <div class="item_div_text_div">
+                                <p>日系可愛配色胸口刺繡舒適透氣上衣</p>
+                                <p>BLACK</p>
+                                <p>S</p>
+                            </div>
+
+                        </div>
+                        <span class="del"><img class="delete" src="./images/icon/x.svg" alt="delete"></span>
+                    </div>
+                    <div class="item_price">
+                        <p>NT.990</p>
+                    </div>
+                    <div class="item_total">
+                        <div class="count">
+                            <button onclick="decrement(quantityInput3)">-</button>
+                            <input type="text" id="quantity3" value="1">
+                            <button onclick="increment(quantityInput3)">+</button>
+                        </div>
+                        <div class="item_total_price">NT.1980</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <div class="item_div">
+                        <span><img src="./images/cloth/cl1.webp" alt="product"></span>
+                        <div class="item_div_text">
+                            <div class="item_div_text_div">
+                                <p>日系可愛配色胸口刺繡舒適透氣上衣</p>
+                                <p>BLUE</p>
+                                <p>S</p>
+                            </div>
+
+                        </div>
+                        <span class="del"><img class="delete" src="./images/icon/x.svg" alt="delete"></span>
+                    </div>
+                    <div class="item_price">
+                        <p>NT.990</p>
+                    </div>
+                    <div class="item_total">
+                        <div class="count">
+                            <button onclick="decrement(quantityInput4)">-</button>
+                            <input type="text" id="quantity4" value="1">
+                            <button onclick="increment(quantityInput4)">+</button>
+                        </div>
+                        <div class="item_total_price">NT.990</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart_method" style="display: flex;">
+
+            <div class="cart_method_pay">
+                <table>
+                    <!-- 選擇送貨及付款方式  -->
+                    <tr>
+                        <th>選擇付款方式</th>
+                    </tr>
+
+                    <tr class="line">
+                        <td style="height: 87.7px;">
+                            <label for="pay">付款方式</label>
+                            <br>
+                            <select name="payment" id="payment" onchange="showDiv(this)">
+                                <option value="">請選擇付款方式</option>
+                                <option value="home-delivery">貨到付款</option>
+                                <option value="cv-store">信用卡</option>
+                            </select>
+                            <div id="hidden_div" style="display:none;">
+                                <p>付款資料</p>
+                                <div class="contentRow">
+                                    <form actiom="" method="post" name="member-form" id="member-form" title="信用卡付款">
+                                        <div class="fill">
+                                            <label for="way-to-pay">已選擇的付款方式：信用卡付款</label>
+                                        </div>
+                                        <div class="fill">
+                                            <input type="text" name="way-to-pay" id="way-to-pay1" title="請輸入姓名"
+                                                placeholder="卡號" style="width: 100%; height: 40px;" required>
+                                        </div>
+                                        <div class="fill">
+                                            <input type="text" name="way-to-pay" id="way-to-pay2" title="請輸入姓名"
+                                                placeholder="持卡人姓名" style="width: 100%; height: 40px;" required>
+                                        </div>
+                                        <div class="fill">
+                                            <input type="text" name="way-to-pay" id="way-to-pay3" title="請輸入姓名"
+                                                style="width: 100%; height: 40px;" placeholder="有效期 (MM/YY)" required>
+                                        </div>
+                                        <div class="fill">
+                                            <input type="text" name="way-to-pay" id="way-to-pay4" title="請輸入姓名"
+                                                placeholder="安全碼" style="width: 100%; height: 40px;" required>
+                                        </div>
+                                </div>
+                                <div>
+                                    <div class="fill" style="padding-left: 30px;">
+                                        <input type="checkbox" name="agree-checkbox" id="agree-checkbox"
+                                            value="同意記住信用卡資訊及《信用卡交易協議》，以便下次快速付款。">
+                                        <label for="agree-checkbox">同意記住信用卡資訊及<span
+                                                style="color: blue;">《信用卡交易協議》</span>，以便下次快速付款。</label>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <script type="text/javascript">
+                                function showDiv(select) {
+                                    if (select.value == "cv-store") {
+                                        document.getElementById("hidden_div").style.display = "block";
+                                    } else {
+                                        document.getElementById("hidden_div").style.display = "none";
+                                    }
+                                } 
+                            </script>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cart_method_information">
+                <table>
+                    <!-- 訂單資訊 -->
+                    <tr>
+                        <th colspan="2">訂單資訊</th>
+                    </tr>
+                    <tr class="line">
+                        <td>小計:</td>
+                        <td class="text-end">NT.2970</td>
+                    </tr>
+                    <tr>
+                        <td>運費:</td>
+                        <td class="text-end">NT.60</td>
+                    </tr>
+                    <tr class="line">
+                        <td>合計:</td>
+
+                        <td class="text-end">NT.3030</td>
+                    </tr>
+                    <tr class="line text-center">
+                        <td colspan="2"><button type="button"><a href="customer.html">前往結帳</a></button></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <iframe class="footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+    </footer>
+    <script>
+        var quantityInput1 = document.getElementById('quantity1');
+        var quantityInput2 = document.getElementById('quantity2');
+        var quantityInput3 = document.getElementById('quantity3');
+        var quantityInput4 = document.getElementById('quantity4');
+        function decrement(input) {
+            var currentValue = parseInt(input.value);
+            if (currentValue > 1) {
+                input.value = currentValue - 1;
+            }
+        }
+
+        function increment(input) {
+            var currentValue = parseInt(input.value);
+            input.value = currentValue + 1;
+        }
+        //刪除
+        let _del = document.querySelectorAll('.del');
+        [..._del].forEach(_del => {
+            _del.onclick = function () {
+                _del.parentNode.parentNode.remove()
+                sumTotal()
+            }
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>
