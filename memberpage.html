@@ -47,7 +47,7 @@
                         <div className="menu">
                             {/* 分頁按紐 */}
                             <button onClick={() => this.handlePageChange('member')}>會員資訊</button>
-                            <button onClick={() => this.handlePageChange('cashback')}>回饋金</button>
+                            <button onClick={() => this.handlePageChange('mixmatch')}>精選穿搭</button>
                             <button onClick={() => this.handlePageChange('order')}>訂單</button>
                         </div>
                         {/* 顯示點選的頁面內容 */}
@@ -61,6 +61,7 @@
             // 根據當下狀態選取不同內容
             renderPage() {
                 const { currentPage } = this.state;
+                const styling = ['1', '2', '3', '4', '5', '6'];
                 switch (currentPage) {
                     case 'member':
                         return (
@@ -134,7 +135,7 @@
                                 </div>
                             </div>
                         );
-                    case 'cashback':
+                        case 'mixmatch':
                         return (
                             <div className="container">
                                 <br />
@@ -145,9 +146,27 @@
                                         <p>andy19278</p>
                                         <span className="memberState">一般會員</span> {/* 使用 span 或 p */}
                                     </div>
-                                    <div className="form">
-                                        <p>目前回饋金為ooo</p>
-                                    </div></div></div>
+                                    {styling.map((p) => {
+                                        return (
+                                            <article className="product styling" key={p.styling}>
+                                                <a className="cloth" href="onestyle.html" target="_top">
+                                                    <img src="./images/styling/style1.jpg" alt="" />
+                                                </a>
+                                                <div className="styling_info">
+                                                    <figure className="styling_head">
+                                                        <img src="./images/styling/f1.jpg" alt="" />
+                                                    </figure>
+                                                    <div >
+                                                        <div className="styling_user">
+                                                            <h2>Pinky</h2>
+                                                            <h2>165 <span>cm</span></h2>
+                                                        </div>
+                                                        <h2>尺寸: <span>S</span> </h2>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        )
+                                    })}</div></div>
                         );
                     case 'order':
                         return (
