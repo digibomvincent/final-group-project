@@ -362,7 +362,7 @@ select {
     color: var(--b80);
 }
 
-#order_2 {
+.order_2 {
     color: var(--b80);
 }
 /* 註冊區 */

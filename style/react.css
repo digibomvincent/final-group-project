@@ -213,7 +213,7 @@ label {
     text-align: center;
     line-height: 44px;
     font-size: 20px;
-    margin-left: 4rem;
+    margin-left: 7rem;
 }
 
 .mailBtn a {
@@ -255,7 +255,59 @@ ul {
     list-style: none;
     /* white-space: nowrap; */
 }
+/* 穿搭分享頁 */
+.product {
+    width: 230px;
+    height: 345px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    float: left;
+}
 
+.product::before {
+    content: url('../images/peka.png');
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    z-index: -1;
+    transform-origin: bottom right;
+    /* 设置变换的原点为右下角 */
+    transform: rotate(-150deg);
+    /* 初始状态下不旋转 */
+    transition: transform 1s ease;
+    /* 添加渐进动画 */
+}
+
+.product:hover::before {
+    transform: rotate(0deg);
+}
+
+.product:hover .cloth img {
+    box-shadow: 0 0 4px var(--yellow);
+    border-top-left-radius: 45px;
+}
+
+.styling {
+    height: 320px;
+}
+
+.styling_info {
+    display: flex;
+}
+
+.styling_head {
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.styling_user {
+    display: flex;
+}
 /* 動畫 */
 
 .box_moveForward img {
@@ -399,8 +451,8 @@ hr {
         width: 100%;
     }
     .mailBtn{
-        width: 55%;
-        margin-left: 35%;
+        width: 66%;
+        margin-left: 24%;
     }
 
     #inputForm3 {
@@ -486,8 +538,8 @@ hr {
         display: flex;
     }
     .mailBtn{
-        width: 65%;
-        margin-left: 25%;
+        width: 66%;
+        margin-left: 24%;
     }
     #cancelBtn {
         width: 100%;
