@@ -139,31 +139,30 @@
 <script>
     $(function () {
         /* 隱藏第二層 */
-        function checkWidth() {
-        if (window.innerWidth > 1080) {
-            /* 隐藏第二层 */
-            $('.menu>li').show();
-        }else{
-            $('.menu>li:nth-child(2),.menu>li:nth-child(3),.menu>li:nth-child(4),.menu>li:nth-child(5),.menu>li:nth-child(6)').hide();
-        }}
-        $(window).resize(checkWidth);
         $('.menu li ul').hide();
-        if (window.innerWidth > 1080) {
-            $('.menu>li').hover(function () {
-                /* 碰到時下彈(>:只有下一層) */
-                $('>ul', this).slideDown(500);
-            }, function () {
-                /* 離開時上彈 */
-                $('>ul', this).slideUp(500);
-            });
-            $('.menu>li>ul>li').hover(function () {
-                /* 碰到時下彈(>:只有下一層) */
-                $('>ul', this).animate({ width: 'toggle' }, 500);
-            }, function () {
-                /* 離開時上彈 */
-                $('>ul', this).animate({ width: 'toggle' }, 500);
-            });
+        function checkWidth() {
+            if (window.innerWidth > 1080) {
+                /* 隐藏第二层 */
+                $('.menu>li').show();
+                $('.menu>li').hover(function () {
+                    /* 碰到時下彈(>:只有下一層) */
+                    $('>ul', this).slideDown(500);
+                }, function () {
+                    /* 離開時上彈 */
+                    $('>ul', this).slideUp(500);
+                });
+                $('.menu>li>ul>li').hover(function () {
+                    /* 碰到時下彈(>:只有下一層) */
+                    $('>ul', this).animate({ width: 'toggle' }, 500);
+                }, function () {
+                    /* 離開時上彈 */
+                    $('>ul', this).animate({ width: 'toggle' }, 500);
+                });
+            } else {
+                $('.menu>li:nth-child(2),.menu>li:nth-child(3),.menu>li:nth-child(4),.menu>li:nth-child(5),.menu>li:nth-child(6)').hide();
+            }
         }
+        $(window).resize(checkWidth);
         $('.hamburger').click(function () {
             /* 三條跟X切換(toggleClass增減class) */
             $(this).toggleClass('is-active');
