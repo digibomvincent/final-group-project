@@ -9,20 +9,23 @@
     <script src="./js/script.js"></script>
     <style>
         .nav {
-    width: 100%;
-    height: 60px;
-    /* iframe有預設高*/
-    position: fixed;
-    z-index: 3;
-}
+            width: 100%;
+            height: 60px;
+            /* iframe有預設高*/
+            position: fixed;
+            z-index: 3;
+        }
+        .iframe_blank{
+            height: 60px;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
-        <div class="iframe_blank"></div>
-    </header>
+
+    <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    <div class="iframe_blank"></div>
+
     <!-- 購物車進度條 -->
     <div id="checkout">
         <div class="container">
@@ -110,7 +113,7 @@
                         </div>
                     </td>
                     <td id="subtotal2" class="text-center" data-cell="小計">NT.990</td>
-                    <td class="x" ><img class="del" src="./images/icon/x.svg" alt="delete"></td>
+                    <td class="x"><img class="del" src="./images/icon/x.svg" alt="delete"></td>
                 </tr>
             </table>
             <div class="cart_table--sm">
@@ -167,7 +170,7 @@
             </div>
         </div>
         <div class="cart_method" style="display: flex;">
-     
+
             <div class="cart_method_pay">
                 <table>
                     <!-- 選擇送貨及付款方式  -->
@@ -184,48 +187,49 @@
                                 <option value="home-delivery">貨到付款</option>
                                 <option value="cv-store">信用卡</option>
                             </select>
-                             <div id="hidden_div" style="display:none;">
-                                <p>付款資料</p> 
+                            <div id="hidden_div" style="display:none;">
+                                <p>付款資料</p>
                                 <div class="contentRow">
                                     <form actiom="" method="post" name="member-form" id="member-form" title="信用卡付款">
                                         <div class="fill">
                                             <label for="way-to-pay">已選擇的付款方式：信用卡付款</label>
                                         </div>
                                         <div class="fill">
-                                            <input type="text" name="way-to-pay" id="way-to-pay1" title="請輸入姓名" placeholder="卡號"
-                                                style="width: 100%; height: 40px;" required>
+                                            <input type="text" name="way-to-pay" id="way-to-pay1" title="請輸入姓名"
+                                                placeholder="卡號" style="width: 100%; height: 40px;" required>
                                         </div>
                                         <div class="fill">
-                                            <input type="text" name="way-to-pay" id="way-to-pay2" title="請輸入姓名" placeholder="持卡人姓名"
-                                                style="width: 100%; height: 40px;" required>
+                                            <input type="text" name="way-to-pay" id="way-to-pay2" title="請輸入姓名"
+                                                placeholder="持卡人姓名" style="width: 100%; height: 40px;" required>
                                         </div>
                                         <div class="fill">
                                             <input type="text" name="way-to-pay" id="way-to-pay3" title="請輸入姓名"
                                                 style="width: 100%; height: 40px;" placeholder="有效期 (MM/YY)" required>
                                         </div>
                                         <div class="fill">
-                                            <input type="text" name="way-to-pay" id="way-to-pay4" title="請輸入姓名" placeholder="安全碼"
-                                                style="width: 100%; height: 40px;" required>
-                                        </div>   
+                                            <input type="text" name="way-to-pay" id="way-to-pay4" title="請輸入姓名"
+                                                placeholder="安全碼" style="width: 100%; height: 40px;" required>
+                                        </div>
                                 </div>
                                 <div>
                                     <div class="fill" style="padding-left: 30px;">
                                         <input type="checkbox" name="agree-checkbox" id="agree-checkbox"
                                             value="同意記住信用卡資訊及《信用卡交易協議》，以便下次快速付款。">
-                                        <label for="agree-checkbox">同意記住信用卡資訊及<span style="color: blue;">《信用卡交易協議》</span>，以便下次快速付款。</label>
+                                        <label for="agree-checkbox">同意記住信用卡資訊及<span
+                                                style="color: blue;">《信用卡交易協議》</span>，以便下次快速付款。</label>
                                     </div>
-                                </div> 
+                                </div>
                                 </form>
                             </div>
-                             <script type="text/javascript">
-                             function showDiv(select){
-                                if(select.value=="cv-store"){
-                                 document.getElementById("hidden_div").style.display = "block";
-                                } else{
-                                 document.getElementById("hidden_div").style.display = "none";
-                                }
-                             } 
-                             </script>
+                            <script type="text/javascript">
+                                function showDiv(select) {
+                                    if (select.value == "cv-store") {
+                                        document.getElementById("hidden_div").style.display = "block";
+                                    } else {
+                                        document.getElementById("hidden_div").style.display = "none";
+                                    }
+                                } 
+                            </script>
                         </td>
                     </tr>
                 </table>
@@ -255,7 +259,7 @@
                     </tr>
                 </table>
             </div>
-        
+
         </div>
     </div>
     <footer>
@@ -277,10 +281,10 @@
             var currentValue = parseInt(input.value);
             input.value = currentValue + 1;
         }
-         //刪除
-     let _del=document.querySelectorAll('.del');
-        [..._del].forEach(_del=>{
-            _del.onclick=function(){
+        //刪除
+        let _del = document.querySelectorAll('.del');
+        [..._del].forEach(_del => {
+            _del.onclick = function () {
                 _del.parentNode.parentNode.remove()
                 sumTotal()
             }
