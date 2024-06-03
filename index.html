@@ -34,7 +34,11 @@
                 <li><img src="./images/banner/banner4.webp" alt="" /></li>
             </ul>
         </div>
-        <figure class="logo"><img src="./images/logo.png" alt="" /></figure>
+        <figure id="scene" class="logo">
+            <img data-depth="0.3" class="eye_l_origin" src="./images/logo_0_eye.png" alt="">
+            <img data-depth="0.3" class="eye_r_origin" src="./images/logo_0_eye.png" alt="">
+            <img src="./images/logo_0.png" alt="" />
+        </figure>
         <figure class="logo_dizzy">
             <img class="face_dizzy" src="./images/face/face2.png" alt="" />
             <div>
@@ -178,8 +182,8 @@
     </script>
     <script src="./js/parallax.min.js"></script>
     <script>
-        /* var scene = document.getElementById('bg');
-        var parallaxInstance = new Parallax(scene); */
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene);
     </script>
     <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
     <script>
