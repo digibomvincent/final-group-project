@@ -9,20 +9,22 @@
     <script src="./js/script.js"></script>
     <style>
         .nav {
-    width: 100%;
-    height: 60px;
-    /* iframe有預設高*/
-    position: fixed;
-    z-index: 3;
-}
+            width: 100%;
+            height: 60px;
+            /* iframe有預設高*/
+            position: fixed;
+            z-index: 3;
+        }
+
+        .iframe_blank {
+            height: 60px;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
-        <div class="iframe_blank"></div>
-    </header>
+    <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    <div class="iframe_blank"></div>
     <!-- 購物車進度條 -->
     <div id="checkout">
         <div class="container">
@@ -99,14 +101,14 @@
                                         </select>
                                         <div id="home_delivery" style="display:none;">
                                             <div class="fill">
-                                                <input type="text" name="home-delivery" title="請輸入地址" placeholder="請輸入宅配地址"
-                                                    style="width: 100%; height: 40px;" required>
+                                                <input type="text" name="home-delivery" title="請輸入地址"
+                                                    placeholder="請輸入宅配地址" style="width: 100%; height: 40px;" required>
                                             </div>
                                         </div>
                                         <div id="s_store" style="display:none;">
                                             <div class="fill">
                                                 <span>
-                                                    <img style="display:inline-block; vertical-align: middle; margin-left: 10px; margin-bottom: 5px;" 
+                                                    <img style="display:inline-block; vertical-align: middle; margin-left: 10px; margin-bottom: 5px;"
                                                         src="./images/icon/7-11-logo.svg" alt="">
                                                     選擇門市
                                                 </span>
@@ -117,13 +119,13 @@
 
                                         <script type="text/javascript">
                                             function showDiv(select) {
-                                                if (select.value =="home-delivery") {
+                                                if (select.value == "home-delivery") {
                                                     document.getElementById('home_delivery').style.display = "block";
                                                     document.getElementById('s_store').style.display = "none";
-                                                } else if(select.value =="store"){
+                                                } else if (select.value == "store") {
                                                     document.getElementById('s_store').style.display = "block";
                                                     document.getElementById('home_delivery').style.display = "none";
-                                              }
+                                                }
                                             } 
                                         </script>
                                     </td>

@@ -20,21 +20,21 @@
     <script src="./js/script.js"></script>
     <style>
         .nav {
-    width: 100%;
-    height: 60px;
-    /* iframe有預設高*/
-    position: fixed;
-    z-index: 3;
-}
+            width: 100%;
+            height: 60px;
+            /* iframe有預設高*/
+            position: fixed;
+            z-index: 3;
+        }
+        .iframe_blank{
+            height: 60px;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
-        <div class="iframe_blank"></div>
-    </header>
-
+    <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
+    <div class="iframe_blank"></div>
     <div class="complete">
         <p>
             <img src="./images/icon/checkmark.svg" alt="">
