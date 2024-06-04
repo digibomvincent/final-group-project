@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const subsLists = iframeDocument.querySelectorAll('ul.subs');
                 const cartContent = iframeDocument.querySelector('.cart_content');
                 const mobile = iframeDocument.querySelector('.m_out');
-                const menu = iframeDocument.querySelector('.menu');
                 if (y <= 90) {
                     console.log("Mouse within 90px from the top");
                     iframe.style.height = '500px';
@@ -28,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             allHidden = false;
                         }
                     });
-                    if (getComputedStyle(menu).flexDirection == 'column') {
-                        if (getComputedStyle(mobile).display !== 'none') {
-                            allHidden = false;
-                        }
+
+                    if (getComputedStyle(mobile).display !== 'none') {
+                        allHidden = false;
                     }
+
                     if (allHidden) {
                         iframe.style.height = '60px';
                     }
