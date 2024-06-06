@@ -355,7 +355,7 @@ a {
     margin: 8px;
 }
 
-.cart_content img {
+.cart_cloth {
     width: 100px;
     height: 105px;
     object-fit: cover;
@@ -363,6 +363,7 @@ a {
 
 .cart_content .box {
     display: flex;
+    position: relative;
 }
 
 .cart_view {
@@ -371,6 +372,13 @@ a {
     height: 37px;
     line-height: 37px;
     text-align: center;
+}
+.cart_del{
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
 }
 
 .cart_num {

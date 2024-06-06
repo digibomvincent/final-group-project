@@ -14,17 +14,6 @@
 </head>
 
 <body>
-    <!-- <div>
-        <figure class="face1_box">
-            <img class="face1" src="./images/logo.png" alt="">
-        </figure>
-        <figure class="face2_box">
-            <img class="face2" src="./images/face/face.png" alt="">
-            <img class="eye_l" src="./images/face/eye.png" alt="">
-            <img class="eye_r" src="./images/face/eye.png" alt="">
-            <img class="mouth" src="./images/face/mouth.png" alt="">
-        </figure>
-    </div> -->
 
     <iframe class="nav" src="nav.html" frameborder="0" scrolling="no"></iframe>
     <div class="iframe_blank"></div>
@@ -51,7 +40,7 @@
                     <button className="addcart"
                         onMouseOver={handleMouseOver}
                         onMouseOut={handleMouseOut}
-                        onClick={handleNum}
+                        onClick={() => handleNum(id)}
                     ><img src="./images/icon/addcart.png" alt="" /></button>
                 </article>
             )
@@ -65,8 +54,9 @@
             const handleMouseOut = () => {
                 setIsHovered(false);
             };
-            const handleNum = () => {
+            const handleNum = (id) => {
                 setNum(num + 1);
+                window.localStorage.setItem(num+1, id);
             };
             const productF = products.filter(k => k.sex === "女");
             console.log(productF);
