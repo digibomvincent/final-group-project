@@ -56,7 +56,24 @@
             };
             const handleNum = (id) => {
                 setNum(num + 1);
-                window.localStorage.setItem(num+1, id);
+                let cart = localStorage.getItem('cart');
+                if (!cart) {
+                    cart = [];
+                } else {
+                    cart = JSON.parse(cart);
+                }
+                let add = cart.find(k => k.id === id);
+                if (add) {
+                    // 如果商品已經在購物車中，增加數量
+                    add.qty += 1;
+                } else {
+                    // 如果商品不在購物車中，新增商品
+                    add = products.find(k => k.id === id);
+                    add.qty = 1;
+                    cart.push(add);
+                };
+                
+                window.localStorage.setItem('cart', JSON.stringify(cart));
             };
             const productF = products.filter(k => k.sex === "女");
             console.log(productF);
