@@ -667,16 +667,8 @@ a {
 
 /* 購物車進度條 */
 #checkout {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
     margin-top: 70px;
 }
-
-/* #checkout .container{
-    max-width: 1320px;
-   margin:0 auto;
-} */
 .checkout_div {
     display: flex;
     align-items: center;
@@ -686,11 +678,6 @@ a {
 #checkout p{
     text-align: center;
 }
-/* 購物車 */
-/* .square{
-    height:80px;
-    width: 100%;
-} */
 #checkout .circle1 {
     border: 1px solid #3A684E;
     width: 60px;
@@ -735,7 +722,6 @@ a {
     justify-content: center;
     align-items: center;
     padding: 14px 14px;
-    /* margin-top: 10px; */
 }
 
 #checkout .circle2 p {
@@ -901,8 +887,6 @@ hr {
 }
 th {
     background-color: #bad2a7;
-    /* padding-top: 5px;
-    padding-bottom: 5px; */
     line-height: 30px;
     border: none;
     text-align: left;
@@ -964,13 +948,10 @@ table {
 }
 /* 資料container */
 .info-container {
-    /*  */
     width: 100%;
-    /* max-width: 1320px; */
+   
     margin: 0 auto;
-    /* margin-top: 30px;
-    display: flex;
-    align-items: center; */
+  
 }
 
 /* 收合購物車 */
@@ -1007,7 +988,6 @@ table {
 }
 
 .infoCol {
-    /* margin-right: 20px; */
     border: 1px solid #ccc;
     width: 100%;
     margin: 0 10px;
@@ -1016,8 +996,6 @@ table {
 
 .infoCol h4 {
     background-color: #bad2a7;
-    /* padding-top: 5px;
-   padding-bottom: 5px; */
     line-height: 30px;
     text-align: left;
     padding-left: 10px;
@@ -1038,10 +1016,7 @@ table {
     width: 98%;
     height: 40px;
     font-size: 16px;
-
-
 }
-
 .contentRow button:hover {
     cursor: pointer;
 }
@@ -1061,18 +1036,13 @@ table {
     margin-top: 40px;
 }
 .submitAgree{
-     /* margin-right: 20px; */
      border: 1px solid #ccc;
      width: 100%;
      margin: 0 10px;
 }
 .submitAgree h4 {
-   
-    /* padding-top: 5px;
-   padding-bottom: 5px; */
     line-height: 30px;
     text-align: center;
-    
     border-bottom: none;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -1088,9 +1058,6 @@ table {
     height: 40px;
     font-size: 16px;
  margin: 30px 10px 20px 20px;
-   /* text-align: center;
-   align-items: center; */
- 
 }
 .submitContent button:hover {
     cursor: pointer;
@@ -1135,23 +1102,3 @@ table {
         max-width:1140px;
     }
 }
-
-/* 
-@media(max-width:650px){
-    th{
-        display: none;
-    }
-    td{
-        display: grid;
-        grid-template-columns: 15ch auto;
-    }
-    td:first-child{
-        padding-top:2rem;
-    }
-    td:last-child{
-        padding-bottom: 2rem;
-    }
-    td::before{
-        content:attr(data-cell);
-    }
-} */

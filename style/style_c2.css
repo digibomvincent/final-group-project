@@ -682,12 +682,6 @@ a {
 #checkout p {
     text-align: center;
 }
-
-/* 購物車 */
-/* .square{
-    height:80px;
-    width: 100%;
-} */
 #checkout .circle1 {
     border: 1px solid #CDCDCD;
     width: 60px;
@@ -770,13 +764,8 @@ hr {
 }
 /* 資料container */
 .info-container {
-    /*  */
     width: 95%;
-    /* max-width: 1320px; */
     margin: 0 auto;
-    /* margin-top: 30px;
-    display: flex;
-    align-items: center; */
 }
 .info-container_div{
     display: flex;
@@ -793,28 +782,6 @@ hr {
     margin-bottom: 0;
     margin-top: 10px;
 }
-/* 收合購物車 */
-/* .sum {
-    border: 1px solid #ccc;
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: 60px;
-}
-
-.sum h2 {
-    flex: 1;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.sum img {
-    height: 16px;
-    width: 16px;
-  
-} */
 
 /*資料填寫 */
 .infoRow {
@@ -829,7 +796,6 @@ hr {
     flex-wrap: wrap-reverse;
 }
 .infoCol {
-    /* margin-right: 20px; */
     border: 1px solid #666;
     width: 100%;
     margin: 0 10px;
@@ -838,8 +804,6 @@ hr {
 
 .infoCol p {
     background-color: #bad2a7;
-    /* padding-top: 5px;
-   padding-bottom: 5px; */
     line-height: 30px;
     text-align: left;
     padding-left: 10px;
@@ -847,12 +811,10 @@ hr {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
 .contentRow form {
     text-align: left;
     padding-left: 10px;
 }
-
 .contentRow button {
     background-color: #3A684E;
     color: #ffffff;
@@ -873,14 +835,12 @@ hr {
     width: 24px;
 }
 .submitRow {
-
-    margin-bottom: 20px;
+     margin-bottom: 20px;
     margin-top: 40px;
 }
 .submitAgree{
     display: flex;
     align-items: end;
-     /* margin-right: 20px; */
      border: 1px solid #666;
      margin: 0 10px;
 }
