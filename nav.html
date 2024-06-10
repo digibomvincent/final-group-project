@@ -142,7 +142,7 @@
         const cartContent = document.querySelector('.cart_content');
         const name = document.querySelectorAll('.cart_name');
         const price = document.querySelector('.cart_price');
-        cart = JSON.parse(window.localStorage.getItem('cart'));
+        var cart = JSON.parse(window.localStorage.getItem('cart'));
         const cart1 = cart[0];
         name.textContent=cart1.name;
         price.textContent=`NT.${cart1.price}`;
