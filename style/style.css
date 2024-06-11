@@ -350,7 +350,6 @@ a {
 }
 
 .cart_content>*,
-.cart_content img,
 .cart_content h2 {
     margin: 8px;
 }
@@ -359,11 +358,16 @@ a {
     width: 100px;
     height: 105px;
     object-fit: cover;
+    overflow: hidden;
+}
+.cart_detail{
+    width: 155px;
 }
 
 .cart_content .box {
     display: flex;
     position: relative;
+    display: none;
 }
 
 .cart_view {
@@ -373,12 +377,18 @@ a {
     line-height: 37px;
     text-align: center;
 }
-.cart_del{
+
+.cart_del {
     height: 24px;
     width: 24px;
     position: absolute;
     right: 0;
     bottom: 5px;
+    background: url(../images/icon/trash.svg);
+    transition: all 0.35s;
+}
+.cart_del:hover{
+    background: url(../images/icon/trash_hover.svg);
 }
 
 .cart_num {
@@ -386,16 +396,22 @@ a {
     background-color: var(--yellow);
     border: solid 1px var(--green);
     border-radius: 99px;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     z-index: 3;
-    right: 35px;
-    top: 25px;
+    right: 27px;
+    top: 10px;
     text-align: center;
     color: var(--green);
-    font-size: 1rem;
-    line-height: 20px;
+    font-size: 0.8rem;
+    line-height: 17px;
+    display: none;
 
+}
+
+.cart_more {
+    text-align: center;
+    display: none;
 }
 
 .bg_box {
@@ -546,9 +562,10 @@ a {
 .menu2>li:nth-child(3),
 .menu2>li:nth-child(4),
 .menu2>li:nth-child(5),
-.menu2>li:nth-child(6){
+.menu2>li:nth-child(6) {
     display: none;
-} 
+}
+
 ul.subs {
     /* 沒空格是他自己 */
     position: absolute;
@@ -882,22 +899,26 @@ nav img {
     transition: all 1s ease;
     position: absolute;
 }
+
 /* 平板 */
 @media (max-width:820px) {
-    .sale_content{
+    .sale_content {
         width: 830px;
     }
 }
+
 /* 手機 */
 @media (max-width:640px) {
-    .sale_content{
+    .sale_content {
         width: 560px;
     }
-    .product{
+
+    .product {
         width: 345px;
         height: 518px;
     }
-    .cloth img{
+
+    .cloth img {
         height: 387px;
     }
 }

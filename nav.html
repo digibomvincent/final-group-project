@@ -21,8 +21,8 @@
                     <span class="bar"></span>
                 </li>
                 <li class="m_out"><a href="index.html" target="_top">HOME</a></li>
-                <li><a href="#" target="_top">SALE</a></li>
-                <li><a href="#" target="_top">MEN</a></li>
+                <li><a href="women.html" target="_top">SALE</a></li>
+                <li><a href="women.html" target="_top">MEN</a></li>
                 <li><a class="a4" href="women.html" target="_top">WOMEN</a></li>
                 <li><a href="styling.html" target="_top">STYLING</a></li>
             </ul>
@@ -31,8 +31,8 @@
             </a>
             <ul class="menu">
                 <li class="m_out"><a href="index.html" target="_top">HOME</a></li>
-                <li><a href="#" target="_top">SALE</a></li>
-                <li><a href="#" target="_top">MEN</a>
+                <li><a href="women.html" target="_top">SALE</a></li>
+                <li><a href="women.html" target="_top">MEN</a>
                     <ul class="subs">
                         <li>
                             <h1>上著</h1>
@@ -109,26 +109,32 @@
             </ul>
         </nav>
     </header>
+    <div class='cart_num'></div>
     <div class='cart_content'>
-        <h2>共有商品(1)</h2>
+        <h2 class="cart_total"></h2>
         <hr />
         <div class='box'>
             <img class="cart_cloth" src="./images/cloth/cl1.webp" alt="" />
-            <div>
+            <div class="cart_detail">
                 <h2 class="cart_name"></h2>
-                <h2 class="cart_qt">數量:1</h2>
+                <h2 class="cart_qty"></h2>
                 <h2 class="cart_price"></h2>
             </div>
-            <img class="cart_del" src="./images/icon/trash.svg" alt="">
+            <div class="cart_del" data-index="0"></div>
         </div>
         <div class='box'>
             <img class="cart_cloth" src="./images/cloth/cl1.webp" alt="" />
-            <div>
+            <div class="cart_detail">
                 <h2 class="cart_name"></h2>
-                <h2 class="cart_qt">數量:1</h2>
+                <h2 class="cart_qty"></h2>
                 <h2 class="cart_price"></h2>
             </div>
-            <img class="cart_del" src="./images/icon/trash.svg" alt="">
+            <div class="cart_del" data-index="1"></div>
+        </div>
+        <div class="cart_more">
+            <hr />
+            ⁝<br>
+            還有更多商品
         </div>
         <div class='cart_view'><a href="cart.html" target="_blank">前往購物車</a></div>
 
@@ -137,24 +143,111 @@
 
 </body>
 <script>
+    //購物車商品
+    const total = document.querySelector('.cart_total');
+    const cart_num = document.querySelector('.cart_num');
+    const box = document.querySelectorAll('.box')
+    const cart_more = document.querySelector('.cart_more');
+    const name1 = document.querySelectorAll('.cart_name')[0];
+    const qty1 = document.querySelectorAll('.cart_qty')[0];
+    const price1 = document.querySelectorAll('.cart_price')[0];
+    const img1 = document.querySelectorAll('.cart_cloth')[0];
+    const name2 = document.querySelectorAll('.cart_name')[1];
+    const qty2 = document.querySelectorAll('.cart_qty')[1];
+    const price2 = document.querySelectorAll('.cart_price')[1];
+    const img2 = document.querySelectorAll('.cart_cloth')[1];
+    function updateCart() {
+        var cart = JSON.parse(window.localStorage.getItem('cart')) || [];
+        var totalQty = 0;
+        console.log(cart);
+        if (cart.length === 0) {
+            total.textContent = "目前沒有商品"
+        } else {
+            cart.forEach(function (item) {
+                totalQty += item.qty;
+            });
+            cart_num.textContent = totalQty;
+            cart_num.style.display = "block";
+            total.textContent = `共有商品(${totalQty})`;
+            box[0].style.display = "flex";
+            const cart1 = cart[0];
+            name1.textContent = cart1.name;
+            qty1.textContent = `數量:${cart1.qty}`;
+            price1.textContent = `NT.${cart1.price}`;
+            img1.src = `./images/cloth/cl${cart1.id}.webp`;
+            if (cart.length > 1) {
+                box[1].style.display = "flex";
+                const cart2 = cart[1];
+                name2.textContent = cart2.name;
+                qty2.textContent = `數量:${cart2.qty}`;
+                price2.textContent = `NT.${cart2.price}`;
+                img2.src = `./images/cloth/cl${cart2.id}.webp`;
+            }
+            if (cart.length > 2) {
+                cart_more.style.display = "block";
+            }
+        }
+    }
     document.addEventListener("DOMContentLoaded", function () {
         const cartIcon = document.getElementById('cartIcon');
         const cartContent = document.querySelector('.cart_content');
-        const name = document.querySelectorAll('.cart_name');
-        const price = document.querySelector('.cart_price');
-        var cart = JSON.parse(window.localStorage.getItem('cart'));
-        const cart1 = cart[0];
-        name.textContent=cart1.name;
-        price.textContent=`NT.${cart1.price}`;
+
+        updateCart()
         cartIcon.addEventListener('click', function (event) {
             event.preventDefault(); // 防止重新加載
             cartContent.style.display = "block";
-
         });
 
         document.addEventListener('click', function (event) {
             if (!cartContent.contains(event.target) && !cartIcon.contains(event.target)) {
                 cartContent.style.display = "none";
+            }
+        });
+        var deleteButtons = document.querySelectorAll('.cart_del');
+        deleteButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                var index = parseInt(button.getAttribute('data-index'));
+                var cart = JSON.parse(window.localStorage.getItem('cart'));
+                cart.splice(index, 1);
+                window.localStorage.setItem('cart', JSON.stringify(cart));
+                box.forEach(function (item) {
+                item.style.display = "none";
+            });
+                updateCart();
+            });
+        });
+    });
+    window.addEventListener('storage', function (e) {
+        if (e.key === 'cart') {
+            updateCart();
+        }
+    });
+
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 監聽來自父窗口的消息
+        window.addEventListener('message', (event) => {
+            // 檢查消息的來源，在本地環境下event.origin是'null'
+            if (event.origin !== 'null' && event.origin !== window.location.origin) {
+                return;
+            }
+
+            const data = event.data;
+            //首頁iframe效果控制
+            if (data.type === 'addClass') {
+                const element = document.getElementById(data.id);
+                if (element) {
+                    element.classList.add(data.class);
+                }
+            } else if (data.type === 'updateStyle') {
+                const element = document.getElementById(data.id);
+                if (element) {
+                    for (const [key, value] of Object.entries(data.style)) {
+                        element.style[key] = value;
+                    }
+                }
             }
         });
     });

@@ -122,13 +122,50 @@
     <script src="./js/jquery-1.11.3.min.js"></script>
     <script src="./js/jquery.jcarousellite.min.js"></script>
     <script>
-        // window.onload = function () {  /* 問老師 */
+        // window.onload = function () {  /* 方法一 */
         //     var iframe = document.getElementById('nav');
         //     var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
         //     var small_expand = iframeDocument.getElementById('small_expand');
         //     small_expand.classList.add('shrink');
         // }
         function loadNav() {
+            var iframe = document.getElementById('nav');
+            iframe.addEventListener('load', () => {
+                // 向iframe发送消息，通知它要添加shrink类
+                iframe.contentWindow.postMessage({ type: 'addClass', id: 'small_expand', class: 'shrink' }, '*');
+            });
+        }
+       
+        window.addEventListener('scroll', function () {
+            var index_top = document.getElementById('index_top');
+            var iframe = document.getElementById('nav');
+            var scrollHeight = window.scrollY; // 获取滚动的高度
+
+            if (scrollHeight > 250) {
+                index_top.style.height = '0px';
+                iframe.style.top = '0px';
+                iframe.style.position = 'fixed';
+
+                // 发送消息给iframe，调整small_expand的宽度
+                iframe.contentWindow.postMessage({ type: 'updateStyle', id: 'small_expand', style: { width: '200px' } }, '*');
+            } else {
+                index_top.style.height = 250 - scrollHeight + 'px';
+                iframe.style.top = '250px';
+                iframe.style.position = 'absolute';
+
+                // 发送消息给iframe，调整small_expand的宽度
+                iframe.contentWindow.postMessage({ type: 'updateStyle', id: 'small_expand', style: { width: scrollHeight + 'px' } }, '*');
+            }
+        });
+
+        // 处理来自iframe的消息（可选，用于调试）
+        window.addEventListener('message', (event) => {
+            if (event.origin !== 'null' && event.origin !== window.location.origin) {
+                return;
+            }
+            console.log('Received message from iframe:', event.data);
+        });
+        /* function loadNav() {
             var iframe = document.getElementById('nav');
             var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
             var small_expand = iframeDocument.getElementById('small_expand');
@@ -152,7 +189,7 @@
                 iframe.style.top = 250 + 'px';
                 iframe.style.position = 'absolute';
             }
-        });
+        }); */
         document.addEventListener('DOMContentLoaded', function () {
             const logo = document.querySelector('.logo');
             const logo_dizzy = document.querySelector('.logo_dizzy');

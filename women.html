@@ -55,7 +55,7 @@
                 setIsHovered(false);
             };
             const handleNum = (id) => {
-                setNum(num + 1);
+                setNum(num + 1)
                 let cart = localStorage.getItem('cart');
                 if (!cart) {
                     cart = [];
@@ -72,7 +72,6 @@
                     add.qty = 1;
                     cart.push(add);
                 };
-                
                 window.localStorage.setItem('cart', JSON.stringify(cart));
             };
             const productF = products.filter(k => k.sex === "女");
@@ -100,7 +99,7 @@
             return (
                 <>
                     <main id="women">
-                        <div className='cart_num'>{num}</div>
+                        {/* <div className='cart_num'>{num}</div> */}
                         <div >
                             <figure id='face1_box' className="face1_box" style={{ display: isHovered || num > 0 ? 'none' : 'block' }}>
                                 <img className="face1" src="./images/logo.png" alt="" />
